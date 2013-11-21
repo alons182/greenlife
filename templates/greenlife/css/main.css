@@ -1,0 +1,64 @@
+@font-face{font-family:'green-life';src:url("../fonts/green-life.eot");src:url("../fonts/green-life.eot?#iefix") format('embedded-opentype'),url("../fonts/green-life.woff") format('woff'),url("../fonts/green-life.ttf") format('truetype'),url("../fonts/green-life.svg#green-life") format('svg');font-weight:normal;font-style:normal}
+[data-icon]:before{font-family:'green-life';content:attr(data-icon);speak:none;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.icon-twitter,.icon-facebook,.icon-menu{font-family:'green-life';speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased}
+.icon-twitter:before{content:"\e003"}
+.icon-facebook:before{content:"\e004"}
+.icon-menu:before{content:"\e000"}
+body{background:#f0efed;color:#333;font:normal 14px georgia,sans-serif;height:100%;margin:0;overflow-y:scroll;padding:0;position:relative}
+a,a:visited{color:#fff;text-decoration:none}
+.inner{margin:0 auto;width:1280px}
+#main-header{background:url("../img/bg.jpg") repeat #fff;color:#fff;display:block;height:110px;position:relative;-moz-box-shadow:0 5px 5px rgba(0,0,0,0.5),0 0 5px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);-webkit-box-shadow:0 5px 5px rgba(0,0,0,0.5),0 0 5px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 5px 5px rgba(0,0,0,0.5),0 0 5px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);z-index:500;}
+#main-header #logo{float:left;width:260px;}
+#main-header #logo a{display:block;}
+#main-header #logo a img{width:95%}
+#main-header .right-info{float:right;text-align:right;}
+#main-header .right-info #redes,#main-header .right-info #btn-reserve{display:inline-block;vertical-align:top}
+#main-header .right-info #redes{width:90px;margin-top:20px;margin-right:10px;margin-bottom:15px;}
+#main-header .right-info #redes a{margin-right:.2em;background:#86b340;padding:.5em;font-size:1.2em}
+#main-header .right-info #btn-reserve{background:#86b340;padding:1em;text-align:center;text-transform:uppercase;-moz-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);font-size:18px;font-weight:bold}
+#main-header .right-info #btn_nav{display:none}
+#main-header .right-info #menu ul li{display:inline-block;vertical-align:top;padding:.3em 1em;border-right:1px solid #86b340;}
+#main-header .right-info #menu ul li a,#main-header .right-info #menu ul li span{color:#20764b;display:block;text-transform:uppercase}
+#main-header .right-info #menu ul .last{border-right:none}
+#main #tours,#main .item-page_tours_home{min-height:100%;overflow:hidden;display:block;position:relative;}
+#main #tours ul,#main .item-page_tours_home ul{margin:0;padding:0;list-style:none;height:100%;overflow:hidden;}
+#main #tours ul li,#main .item-page_tours_home ul li{position:absolute;list-style-type:none;padding:0;margin:0;height:100%;width:80%;cursor:pointer;background-position:center top;background-repeat:no-repeat;background-size:cover;}
+#main #tours ul li .tour-info,#main .item-page_tours_home ul li .tour-info{padding:1em;position:absolute;top:10%;right:15%;background:rgba(242,101,34,0.9);width:40%;color:#fff;}
+#main #tours ul li .tour-info p,#main .item-page_tours_home ul li .tour-info p{font-family:verdana;line-height:24px}
+#main #tours ul li .tour-title,#main .item-page_tours_home ul li .tour-title{padding:1em;position:absolute;width:25%;bottom:20%;}
+#main #tours ul li .tour-title h1,#main .item-page_tours_home ul li .tour-title h1{color:#fff;font-size:24px}
+#main #tours ul li .tour-title p,#main .item-page_tours_home ul li .tour-title p{color:#faf390;font-size:16px}
+#main #tours ul #t1,#main .item-page_tours_home ul #t1{background-image:url("../img/t1.jpg");z-index:1;}
+#main #tours ul #t1 .tour-title,#main .item-page_tours_home ul #t1 .tour-title{background:rgba(70,158,65,0.8)}
+#main #tours ul #t2,#main .item-page_tours_home ul #t2{background-image:url("../img/t2.jpg");z-index:20;left:25%;}
+#main #tours ul #t2 .tour-title,#main .item-page_tours_home ul #t2 .tour-title{background:rgba(139,197,67,0.8)}
+#main #tours ul #t3,#main .item-page_tours_home ul #t3{background-image:url("../img/t3.jpg");z-index:50;left:50%;}
+#main #tours ul #t3 .tour-title,#main .item-page_tours_home ul #t3 .tour-title{background:rgba(32,118,75,0.8)}
+#main #tours ul #t4,#main .item-page_tours_home ul #t4{background-image:url("../img/t4.jpg");z-index:100;left:75%;}
+#main #tours ul #t4 .tour-title,#main .item-page_tours_home ul #t4 .tour-title{background:rgba(252,184,17,0.8)}
+#main-footer{position:relative;display:block;height:30px;background:url("../img/bg.jpg") repeat #222;text-align:center;}
+#main-footer #copyright{padding-top:5px;}
+#main-footer #copyright a{color:#333}
+@media only screen and (max-width:  1280px){.inner{width:auto}
+}@media only screen and (max-width: 768px){#main-header #logo{margin-top:10px;width:203px}
+#main-header .right-info #menu{font-size:12px}
+#main #tours{position:static;}
+#main #tours ul li{position:static;width:100%;left:0 !important;display:block;height:500px !important;}
+#main #tours ul li .tour-info{position:relative;width:70%;margin:0 auto;right:0;}
+#main #tours ul li .tour-info h1{font-size:18px}
+#main #tours ul li .tour-info p{font-family:verdana;line-height:18px;font-size:13px}
+#main #tours ul li .tour-title{position:relative;width:100%;top:100px;padding:.5em;}
+#main #tours ul li .tour-title h1{font-size:18px}
+#main #tours ul li .tour-title p{font-size:13px}
+}@media only screen and (max-width:  640px){#main-header #logo{margin-top:5px;width:160px}
+#main-header .right-info{float:none;}
+#main-header .right-info #menu{display:none}
+#main-header .right-info #btn-reserve{padding:1em;font-size:14px}
+#main-header .right-info #btn_nav{position:absolute;top:75px;left:5px;padding:7px 10px 8px 8px;background:#fcb811;background-size:12px 9px;display:block;cursor:pointer;font-size:14px;}
+#main-header .right-info #btn_nav span{margin-right:5px}
+#main-header .right-info #menu{margin-left:0;top:110px;left:0;width:100%;position:absolute;z-index:20;background:#f26522;text-align:left;display:none;}
+#main-header .right-info #menu ul{padding:0;margin:0;}
+#main-header .right-info #menu ul li{float:none;background-size:13px 12px;border-right:none;}
+#main-header .right-info #menu ul li a,#main-header .right-info #menu ul li span{padding:5px 5px 3px 5px;background-position:9px 9px;color:#fff}
+#main-header .right-info #menu ul li .active{background-color:transparent;color:#fff}
+}

@@ -1,0 +1,199 @@
+
+			
+@import "iconos.styl"
+
+
+
+$lima = #8bc543
+$amarillo = #fcb811
+$verde = #86b340
+$verde2 = #20764b
+$naranja = #f26522
+body
+	background #f0efed
+	color #333
+	font normal 14px georgia,sans-serif
+	height 100%
+	margin 0
+	overflow-y scroll
+	padding 0
+	position relative
+
+a, a:visited
+	color #FFF
+	text-decoration none
+.inner
+	margin 0 auto
+	width 1280px
+
+#main-header
+	background url('../img/bg.jpg') repeat #FFF
+	color #fff
+	display block
+	height 110px
+	position relative
+	-moz-box-shadow 0 5px 5px rgba(0,0,0,0.5),0 0 5px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05)
+	-webkit-box-shadow 0 5px 5px rgba(0,0,0,0.5),0 0 5px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05)
+	box-shadow 0 5px 5px rgba(0,0,0,0.5),0 0 5px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05)
+	z-index 500
+	#logo
+		float left
+		width 260px
+
+		a 
+			display block
+
+			img 
+				width 95%
+
+	.right-info
+		float right
+		text-align right 
+
+		#redes, #btn-reserve
+			display inline-block
+			vertical-align top
+		#redes
+			width 90px
+			margin-top 20px
+			margin-right 10px
+			margin-bottom 15px
+			a
+				margin-right .2em
+				background $verde
+				padding .5em
+				font-size 1.2em
+
+
+		#btn-reserve
+			
+			background $verde
+			padding 1em
+			text-align center
+			text-transform uppercase
+			-moz-box-shadow 0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05)
+			-webkit-box-shadow 0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05)
+			box-shadow 0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05)
+			font-size 18px
+			font-weight bold
+			//width 200px
+		#btn_nav
+			display none
+		#menu
+			ul 
+				li 
+					display inline-block
+					vertical-align top
+					padding .3em 1em
+					border-right 1px solid $verde 
+
+					a, span 
+						color $verde2 
+						display block
+						text-transform uppercase
+				.last 
+					border-right none
+#main 
+	#tours, .item-page_tours_home
+		min-height 100%
+		overflow hidden
+		display block
+		position relative
+		
+		ul 
+			margin 0
+			padding 0
+			list-style none
+			height 100%
+			overflow hidden
+			
+			li 
+				position absolute
+				list-style-type none
+				padding 0
+				margin 0
+				height 100%
+				width 80%
+				cursor pointer
+				background-position center top
+				background-repeat no-repeat
+				background-size cover
+				/*-webkit-transition all 0.5s;
+				-moz-transition all 0.5s
+				-ms-transition all 0.5s
+				-o-transition all 0.5s
+				transition all 0.5s*/
+				.tour-info
+					padding 1em
+					position absolute
+					top 10%
+					right 15%
+					background rgba(242,101,34,0.9)
+					width 40%
+					color #fff
+					
+													
+					p 
+						font-family verdana
+						line-height 24px
+				
+				.tour-title
+					padding 1em
+					position absolute
+					width 25%
+					bottom 20%
+
+					h1
+						color #fff
+						font-size 24px
+					p
+						color #faf390
+						font-size 16px
+			#t1
+				background-image url('../img/t1.jpg')
+				z-index 1
+				.tour-title 
+					background rgba(70,158,65,0.8)
+				
+			#t2
+				background-image url('../img/t2.jpg')
+				z-index 20
+				left 25%
+				.tour-title 
+					background rgba(139,197,67,0.8)
+			#t3
+				background-image url('../img/t3.jpg')
+				z-index 50
+				left 50%
+				.tour-title
+					background rgba(32,118,75,0.8)
+			#t4
+				background-image url('../img/t4.jpg')
+				z-index 100
+				left 75%
+				.tour-title
+					background rgba(252,184,17,0.8)
+		
+
+#main-footer
+	position relative
+	display block
+	height 30px
+	background url('../img/bg.jpg') repeat #222
+	text-align center
+
+	#copyright
+		padding-top 5px
+		a 
+			color #333
+
+
+
+			
+
+
+@import "responsive.styl"
+
+					
+
+				
