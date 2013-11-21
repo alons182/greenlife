@@ -14,10 +14,10 @@ a,a:visited{color:#fff;text-decoration:none}
 #main-header .right-info{float:right;text-align:right;}
 #main-header .right-info #redes,#main-header .right-info #btn-reserve{display:inline-block;vertical-align:top}
 #main-header .right-info #redes{width:90px;margin-top:20px;margin-right:10px;margin-bottom:15px;}
-#main-header .right-info #redes a{margin-right:.2em;background:#f00;padding:.5em;font-size:1.2em}
-#main-header .right-info #btn-reserve{background:#f00;padding:1em;text-align:center;text-transform:uppercase;-moz-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);font-size:18px;font-weight:bold}
+#main-header .right-info #redes a{margin-right:.2em;background:#86b340;padding:.5em;font-size:1.2em}
+#main-header .right-info #btn-reserve{background:#86b340;padding:1em;text-align:center;text-transform:uppercase;-moz-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);font-size:18px;font-weight:bold}
 #main-header .right-info #btn_nav{display:none}
-#main-header .right-info #menu ul li{display:inline-block;vertical-align:top;padding:.3em 1em;border-right:1px solid #f00;}
+#main-header .right-info #menu ul li{display:inline-block;vertical-align:top;padding:.3em 1em;border-right:1px solid #86b340;}
 #main-header .right-info #menu ul li a,#main-header .right-info #menu ul li span{color:#20764b;display:block;text-transform:uppercase}
 #main-header .right-info #menu ul .last{border-right:none}
 #main #tours,#main .item-page_tours_home{min-height:100%;overflow:hidden;display:block;position:relative;}
