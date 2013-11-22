@@ -22,6 +22,7 @@ jQuery(function($) {
                 $('#t2').animate({"left":"70%"});
                 $('#t3').animate({"left":"80%"});
                 $('#t4').animate({"left":"90%"});
+
                 
             break;
           case 't2': 
@@ -67,7 +68,7 @@ jQuery(function($) {
    
 
     function resizes(){
-            height_dispo = getWindowHeight() - ($('#main-header').height()) - ($('.item-page').height()) - ($('#main-footer').height());
+            height_dispo = getWindowHeight() - ($('#main-header').height()) - ($('#main-footer').height()) - 20;
             width_dispo = getWindowWidth() - getScrollerWidth();            
            
 
