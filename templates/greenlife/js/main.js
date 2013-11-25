@@ -65,7 +65,13 @@ jQuery(function($) {
       
     });
 
+   $('.botones li').on('click',function(e){
+    //console.log($(this).attr('data-info'));
+    
+    $(".info").find('article').hide();
+    $(".info").find('[data-id="'+ $(this).attr('data-info') +'"]').fadeIn(500);
    
+  });
 
     function resizes(){
             height_dispo = getWindowHeight() - ($('#main-header').height()) - ($('#main-footer').height());

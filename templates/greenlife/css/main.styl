@@ -236,6 +236,77 @@ p
 			h2
 				color $naranja
 				font-size 1.5em
+		.main-info, .info-right
+			display inline-block
+			vertical-align top
+		.main-info
+			width 68%
+		.info-right
+			width 30%
+			.botones
+				//float left
+				position absolute
+				ul
+					
+					margin 0
+					padding 0
+										
+
+					li 
+						//overflow auto
+						background #CCC
+						cursor pointer
+						height 42px
+						list-style none
+						margin 5px 5px
+						position relative
+						border-radius 5px
+					
+					
+							
+
+						span 
+							color #fff
+							display block
+							font-size 12px
+							height 16px
+							text-align center
+							width 50px
+						.icon-image, .icon-signup, .icon-notebook, .icon-coin, .icon-cart, .icon-users
+							color rgba(255, 255, 255, 0.6)
+							font-size 1.3em
+							padding-bottom 5px
+							padding-top 2px
+					#btn-images
+						background $amarillo 
+					#btn-details
+						background $verde
+					#btn-rates
+						background $verde2
+					#btn-book
+						background $naranja
+			.info 
+				float right
+				background rgba(255,255,255,1) url('../img/bg.jpg') repeat
+				width 80%
+				padding 1em .8em 1em 2em
+				min-height 335px
+				line-height 24px
+				
+				article
+					display none
+
+					img 
+						width 100%
+					h3 
+						color $naranja
+					p 
+						margin-bottom 5px
+					strong
+						color $verde
+				article[data-id ="images"]
+					display block
+			
 	
 	.b2jcontainer
 		margin 30px auto !important
