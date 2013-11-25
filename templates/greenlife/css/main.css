@@ -71,6 +71,7 @@ p{margin:0 0 20px}
 #main-footer #copyright a{color:#333}
 @media only screen and (max-width:  1280px){.inner{width:auto}
 #main .item-page,#main .blog{width:auto}
+#main .b2jcontainer{width:auto !important}
 }@media only screen and (max-width: 800px){#main-header #logo{margin-top:10px;width:203px}
 #main-header .right-info #menu{font-size:12px}
 #main-header .right-info #redes{width:200px;margin-top:10px}
