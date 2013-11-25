@@ -71,16 +71,16 @@ p{margin:0 0 20px}
 #main-footer #copyright a{color:#333}
 @media only screen and (max-width:  1280px){.inner{width:auto}
 #main .item-page,#main .blog{width:auto}
-}@media only screen and (max-width: 768px){#main-header #logo{margin-top:10px;width:203px}
+}@media only screen and (max-width: 800px){#main-header #logo{margin-top:10px;width:203px}
 #main-header .right-info #menu{font-size:12px}
-#main #tours,#main .item-page_tours_home{position:static;}
-#main #tours ul li,#main .item-page_tours_home ul li{position:static;width:100%;left:0 !important;display:block;height:500px !important;}
-#main #tours ul li .tour-info,#main .item-page_tours_home ul li .tour-info{position:relative;width:70%;margin:0 auto;right:0;}
-#main #tours ul li .tour-info h1,#main .item-page_tours_home ul li .tour-info h1{font-size:18px}
-#main #tours ul li .tour-info p,#main .item-page_tours_home ul li .tour-info p{font-family:verdana;line-height:18px;font-size:13px}
-#main #tours ul li .tour-title,#main .item-page_tours_home ul li .tour-title{position:relative;width:100%;top:100px;padding:.5em;}
-#main #tours ul li .tour-title h1,#main .item-page_tours_home ul li .tour-title h1{font-size:18px}
-#main #tours ul li .tour-title p,#main .item-page_tours_home ul li .tour-title p{font-size:13px}
+#main #tours,#main .item-page_tours_home,#main .blog-featured_tours_home{position:static;}
+#main #tours ul li,#main .item-page_tours_home ul li,#main .blog-featured_tours_home ul li{position:static;width:100%;left:0 !important;display:block;height:500px !important;}
+#main #tours ul li .tour-info,#main .item-page_tours_home ul li .tour-info,#main .blog-featured_tours_home ul li .tour-info{position:relative;width:70%;margin:0 auto;right:0;}
+#main #tours ul li .tour-info h1,#main .item-page_tours_home ul li .tour-info h1,#main .blog-featured_tours_home ul li .tour-info h1{font-size:18px}
+#main #tours ul li .tour-info p,#main .item-page_tours_home ul li .tour-info p,#main .blog-featured_tours_home ul li .tour-info p{font-family:verdana;line-height:18px;font-size:13px}
+#main #tours ul li .tour-title,#main .item-page_tours_home ul li .tour-title,#main .blog-featured_tours_home ul li .tour-title{position:relative;width:100%;top:100px;padding:.5em;}
+#main #tours ul li .tour-title h1,#main .item-page_tours_home ul li .tour-title h1,#main .blog-featured_tours_home ul li .tour-title h1{font-size:18px}
+#main #tours ul li .tour-title p,#main .item-page_tours_home ul li .tour-title p,#main .blog-featured_tours_home ul li .tour-title p{font-size:13px}
 }@media only screen and (max-width:  640px){#main-header #logo{margin-top:5px;width:160px}
 #main-header .right-info{float:none;}
 #main-header .right-info #menu{display:none}
