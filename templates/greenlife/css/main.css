@@ -73,6 +73,7 @@ p{margin:0 0 20px}
 #main .item-page,#main .blog{width:auto}
 }@media only screen and (max-width: 800px){#main-header #logo{margin-top:10px;width:203px}
 #main-header .right-info #menu{font-size:12px}
+#main-header .right-info #redes{width:200px;margin-top:10px}
 #main #tours,#main .item-page_tours_home,#main .blog-featured_tours_home{position:static;}
 #main #tours ul li,#main .item-page_tours_home ul li,#main .blog-featured_tours_home ul li{position:static;width:100%;left:0 !important;display:block;height:500px !important;}
 #main #tours ul li .tour-info,#main .item-page_tours_home ul li .tour-info,#main .blog-featured_tours_home ul li .tour-info{position:relative;width:70%;margin:0 auto;right:0;}
@@ -84,7 +85,7 @@ p{margin:0 0 20px}
 }@media only screen and (max-width:  640px){#main-header #logo{margin-top:5px;width:160px}
 #main-header .right-info{float:none;}
 #main-header .right-info #menu{display:none}
-#main-header .right-info #btn-reserve{padding:1em;font-size:14px}
+#main-header .right-info #btn-reserve{padding:.5em;font-size:16px}
 #main-header .right-info #btn_nav{position:absolute;top:75px;left:5px;padding:7px 10px 8px 8px;background:#fcb811;-webkit-background-size:12px 9px;-moz-background-size:12px 9px;background-size:12px 9px;display:block;cursor:pointer;font-size:14px;}
 #main-header .right-info #btn_nav span{margin-right:5px}
 #main-header .right-info #menu{margin-left:0;top:110px;left:0;width:100%;position:absolute;z-index:20;background:#f26522;text-align:left;display:none;}
