@@ -49,7 +49,7 @@ p{margin:0 0 20px}
 #main #tours ul #t4,#main .item-page_tours_home ul #t4,#main .blog-featured_tours_home ul #t4{background-image:url("../img/t4.jpg");z-index:100;left:75%;}
 #main #tours ul #t4 .tour-title,#main .item-page_tours_home ul #t4 .tour-title,#main .blog-featured_tours_home ul #t4 .tour-title{background:rgba(252,184,17,0.8)}
 #main #tours .btn-more:hover,#main .item-page_tours_home .btn-more:hover,#main .blog-featured_tours_home .btn-more:hover{background:#86b340}
-#main .item-page,#main .blog,#main .category-list{margin:20px auto;width:1280px;background:#fff url("../img/bg.jpg") repeat;padding:1em;}
+#main .item-page,#main .blog,#main .category-list{margin:20px auto;width:1280px;background:rgba(255,255,255,0.9);padding:1em;}
 #main .item-page h1,#main .blog h1,#main .category-list h1{color:#f26522}
 #main .item-page h2,#main .blog h2,#main .category-list h2{color:#86b340}
 #main .item-page p,#main .blog p,#main .category-list p{line-height:24px}
