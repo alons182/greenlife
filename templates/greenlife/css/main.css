@@ -86,7 +86,9 @@ p{margin:0 0 20px}
 }@media only screen and (max-width:  640px){#main-header #logo{margin-top:5px;width:160px}
 #main-header .right-info{float:none;}
 #main-header .right-info #menu{display:none}
-#main-header .right-info #btn-reserve{padding:.5em;font-size:16px;margin-top:10px}
+#main-header .right-info .idiomas{margin-top:10px;margin-bottom:5px}
+#main-header .right-info #redes{margin-top:10px;margin-bottom:10px}
+#main-header .right-info #btn-reserve{padding:.5em;font-size:16px}
 #main-header .right-info #btn_nav{position:absolute;top:75px;left:5px;padding:7px 10px 8px 8px;background:#fcb811;-webkit-background-size:12px 9px;-moz-background-size:12px 9px;background-size:12px 9px;display:block;cursor:pointer;font-size:14px;}
 #main-header .right-info #btn_nav span{margin-right:5px}
 #main-header .right-info #menu{margin-left:0;top:110px;left:0;width:100%;position:absolute;z-index:20;background:#f26522;text-align:left;display:none;}
