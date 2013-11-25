@@ -68,7 +68,7 @@ jQuery(function($) {
    
 
     function resizes(){
-            height_dispo = getWindowHeight() - ($('#main-header').height()) - ($('#main-footer').height()) - 20;
+            height_dispo = getWindowHeight() - ($('#main-header').height()) - ($('#main-footer').height());
             width_dispo = getWindowWidth() - getScrollerWidth();            
            
 

@@ -46,9 +46,14 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
                 <div id="logo">
                     <a href="<?php echo $this->baseurl ?>"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/logo.png" alt="Green Life Tour" /></a>
                 </div>
+                
                 <div class="right-info">
+                    <div class="idiomas">
+                        <a href="/es" title="Español">Español</a>
+                        <a href="/en" title="Ingles">Ingles</a>
+                    </div>  
                     <div id="redes">
-                        <a href="#" class="icon-facebook"></a>
+                        <a href="#" class="icon-facebook"></a> 
                         <a href="#" class="icon-twitter"></a>
                         
                     </div>
