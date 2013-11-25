@@ -21,10 +21,13 @@ p{margin:0 0 20px}
 #main-header .right-info{float:right;text-align:right;}
 #main-header .right-info #redes,#main-header .right-info #btn-reserve,#main-header .right-info .idiomas,#main-header .right-info .custom_reserve{display:inline-block;vertical-align:top}
 #main-header .right-info #redes{width:90px;margin-top:20px;margin-right:10px;margin-bottom:15px;}
-#main-header .right-info #redes a{margin-right:.2em;background:#86b340;padding:.5em;font-size:1.2em}
+#main-header .right-info #redes a{margin-right:.2em;background:#86b340;padding:.5em;font-size:1.2em;}
+#main-header .right-info #redes a:hover{background:#f26522}
 #main-header .right-info .idiomas{width:130px;margin-top:20px;margin-right:0;margin-bottom:15px;color:#86b340;}
-#main-header .right-info .idiomas a{background:#86b340;color:#fff;padding:.3em;margin-right:5px}
-#main-header .right-info #btn-reserve{background:#86b340;padding:1em;text-align:center;text-transform:uppercase;-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);font-size:18px;font-weight:bold}
+#main-header .right-info .idiomas a{background:#86b340;color:#fff;padding:.3em;margin-right:5px;}
+#main-header .right-info .idiomas a:hover{background:#f26522}
+#main-header .right-info #btn-reserve{background:#86b340;padding:1em;text-align:center;text-transform:uppercase;-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);font-size:18px;font-weight:bold;}
+#main-header .right-info #btn-reserve:hover{background:#f26522}
 #main-header .right-info #btn_nav{display:none}
 #main-header .right-info #menu ul li{display:inline-block;vertical-align:top;padding:.3em 1em;border-right:1px solid #86b340;}
 #main-header .right-info #menu ul li a,#main-header .right-info #menu ul li span{color:#20764b;display:block;text-transform:uppercase;}
