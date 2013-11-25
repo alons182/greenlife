@@ -64,7 +64,7 @@ p{margin:0 0 20px}
 #main .item-page p,#main .blog p,#main .category-list p{line-height:24px}
 #main .item-page .page-header h2,#main .blog .page-header h2,#main .category-list .page-header h2{color:#f26522;font-size:1.5em}
 #main .item-page .main-info,#main .blog .main-info,#main .category-list .main-info,#main .item-page .info-right,#main .blog .info-right,#main .category-list .info-right{display:inline-block;vertical-align:top}
-#main .item-page .main-info,#main .blog .main-info,#main .category-list .main-info{width:68%}
+#main .item-page .main-info,#main .blog .main-info,#main .category-list .main-info{width:65%}
 #main .item-page .info-right,#main .blog .info-right,#main .category-list .info-right{width:30%;}
 #main .item-page .info-right .botones,#main .blog .info-right .botones,#main .category-list .info-right .botones{position:absolute;}
 #main .item-page .info-right .botones ul,#main .blog .info-right .botones ul,#main .category-list .info-right .botones ul{margin:0;padding:0;}
@@ -77,7 +77,7 @@ p{margin:0 0 20px}
 #main .item-page .info-right .botones ul #btn-book,#main .blog .info-right .botones ul #btn-book,#main .category-list .info-right .botones ul #btn-book{background:#f26522}
 #main .item-page .info-right .info,#main .blog .info-right .info,#main .category-list .info-right .info{float:right;background:#fff url("../img/bg.jpg") repeat;width:80%;padding:1em .8em 1em 2em;min-height:335px;line-height:24px;}
 #main .item-page .info-right .info article,#main .blog .info-right .info article,#main .category-list .info-right .info article{display:none;}
-#main .item-page .info-right .info article img,#main .blog .info-right .info article img,#main .category-list .info-right .info article img{width:100%}
+#main .item-page .info-right .info article img,#main .blog .info-right .info article img,#main .category-list .info-right .info article img{height:100%}
 #main .item-page .info-right .info article h3,#main .blog .info-right .info article h3,#main .category-list .info-right .info article h3{color:#f26522}
 #main .item-page .info-right .info article p,#main .blog .info-right .info article p,#main .category-list .info-right .info article p{margin-bottom:5px}
 #main .item-page .info-right .info article strong,#main .blog .info-right .info article strong,#main .category-list .info-right .info article strong{color:#86b340}
