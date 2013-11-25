@@ -58,7 +58,7 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
                         
                     </div>
                     <jdoc:include type="modules" name="btn-reserve" style="none" />
-                    <a href="#" id="btn-reserve">Reserve Now</a>
+                    
                     <div id="btn_nav"><span class="icon-menu"></span>Menu</div>
                     <nav id="menu">
                         <jdoc:include type="modules" name="menu" style="none" />

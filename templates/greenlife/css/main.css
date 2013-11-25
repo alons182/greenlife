@@ -19,7 +19,7 @@ p{margin:0 0 20px}
 #main-header #logo a{display:block;}
 #main-header #logo a img{width:95%}
 #main-header .right-info{float:right;text-align:right;}
-#main-header .right-info #redes,#main-header .right-info #btn-reserve,#main-header .right-info .idiomas{display:inline-block;vertical-align:top}
+#main-header .right-info #redes,#main-header .right-info #btn-reserve,#main-header .right-info .idiomas,#main-header .right-info .custom_reserve{display:inline-block;vertical-align:top}
 #main-header .right-info #redes{width:90px;margin-top:20px;margin-right:10px;margin-bottom:15px;}
 #main-header .right-info #redes a{margin-right:.2em;background:#86b340;padding:.5em;font-size:1.2em}
 #main-header .right-info .idiomas{width:130px;margin-top:20px;margin-right:0;margin-bottom:15px;color:#86b340;}
