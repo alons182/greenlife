@@ -118,7 +118,7 @@ p{margin:0 0 20px}
 #main #tours ul li .tour-title h1,#main .item-page_tours_home ul li .tour-title h1,#main .blog-featured_tours_home ul li .tour-title h1{font-size:18px}
 #main #tours ul li .tour-title p,#main .item-page_tours_home ul li .tour-title p,#main .blog-featured_tours_home ul li .tour-title p{font-size:13px}
 #main .item-page .main-info{width:98%}
-#main .item-page .info-right{width:350px !important;}
+#main .item-page .info-right{width:348px !important;}
 #main .item-page .info-right .botones{margin-left:-15px;right:auto !important}
 #main .item-page .info-right .info{padding:1em}
 }@media only screen and (max-width:  640px){#main-header #logo{margin-top:5px;width:160px}
