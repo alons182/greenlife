@@ -75,12 +75,12 @@ jQuery(function($) {
             if(getWindowWidth() > 768){
                 
                  $('#main').height(height_dispo).width(width_dispo);
-                 $('.item-page_tours_home li').height(height_dispo);//.width(width_dispo);
+                 $('.blog-featured_tours_home li').height(height_dispo);//.width(width_dispo);
                
             }else
               {  
                $('#main').height('auto').width('auto');
-               $('.item-page_tours_home li').height('500px');
+               $('.blog-featured_tours_home li').height('500px');
             }
            
 
