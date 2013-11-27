@@ -106,8 +106,9 @@ jQuery(function($) {
    
   });
 
-    $(".chosen-select").chosen({width: "100%"});
-
+    
+  $(".chosen-select").chosen({width: "100%"});
+  $( "#date" ).datepicker({ dateFormat: "dd/mm/yy" });
    
    
 
@@ -135,6 +136,7 @@ jQuery(function($) {
   });
 
   $.validator.setDefaults({ ignore: ":hidden:not(select)" })
+ 
 
   $("#reservationFormTour").validate({
 

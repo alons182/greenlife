@@ -185,6 +185,8 @@ p{margin:0 0 20px}
 .chosen-choices input[type="text"]{color:#999 !important;height:13px !important;width:auto !important}
 .chosen-results{color:#999}
 .highlighted{background-color:#f26522 !important;background-image:none !important}
+.ui-widget{font-size:.9em !important}
+.ui-state-default{color:#86b340 !important}
 @media only screen and (max-width:  1280px){.inner{width:auto}
 #main .item-page,#main .blog{width:auto;}
 #main .item-page .info-right .botones,#main .blog .info-right .botones{right:0}
