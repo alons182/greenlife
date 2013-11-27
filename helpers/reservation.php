@@ -53,8 +53,10 @@ $destinatario = array('alonso@avotz.com',$emailuser); //$email_yokue;
 
 
 //verificamos los datos con los métodos de JMailHelper
-if(!JMailHelper::isEmailAddress($destinatario))return false;
-if(!JMailHelper::cleanAddress($destinatario)) return false;
+if(!JMailHelper::isEmailAddress($destinatario[0]))return false;
+if(!JMailHelper::cleanAddress($destinatario[0])) return false;
+if(!JMailHelper::isEmailAddress($destinatario[1]))return false;
+if(!JMailHelper::cleanAddress($destinatario[1])) return false;
 //limpiamos el asunto de posible código malicioso 
 $subject = JMailHelper::cleanSubject($asunto); 
 //limpiamos el mensaje (cuerpo del email) de posible código malicioso
