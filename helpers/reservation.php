@@ -46,7 +46,7 @@ $emailuser= array(
 			$config->getValue( 'config.fromname' )
 			 );*/
 
-$destinatario = 'alonso@avotz.com'; //$email_yokue;
+$destinatario = array('alonso@avotz.com',$data['email']); //$email_yokue;
 
 
 
