@@ -88,12 +88,12 @@ class WFPacker extends JObject {
 
     public function pack($minify = true, $gzip = false) {
         $type = $this->getType();
-        
-        /*$encoding = self::getEncoding();
 
-        $zlib = extension_loaded('zlib') && !ini_get('zlib.output_compression');
-        $gzip = $gzip && !empty($encoding) && $zlib && function_exists('gzencode');*/
-        
+        /* $encoding = self::getEncoding();
+
+          $zlib = extension_loaded('zlib') && !ini_get('zlib.output_compression');
+          $gzip = $gzip && !empty($encoding) && $zlib && function_exists('gzencode'); */
+
         ob_start();
 
         // Headers
@@ -116,7 +116,7 @@ class WFPacker extends JObject {
         header("Expires: " . gmdate("D, d M Y H:i:s", time() + $expires) . " GMT");
 
         $files = $this->getFiles();
-        
+
         $encoding = self::getEncoding();
 
         $zlib = extension_loaded('zlib') && ini_get('zlib.output_compression');
@@ -139,16 +139,16 @@ class WFPacker extends JObject {
             header("Content-Encoding: " . $encoding);
             $content = gzencode($content, 4, FORCE_GZIP);
         }
-        
+
         // get content hash
         $hash = hash('md5', $content);
-        
+
         // set etag header
         header("ETag: \"{$hash}\"");
 
         // set content length
-        header("Content-Length: ".strlen($content));
-        
+        header("Content-Length: " . strlen($content));
+
         // stream to client
         echo $content;
 
@@ -187,7 +187,18 @@ class WFPacker extends JObject {
             $data = '';
 
             foreach ($matches[1] as $match) {
-                $data .= $this->getText(realpath($this->get('_cssbase') . '/' . $match));
+                // url has a query, remove
+                if (strpos($match, '?') !== false) {
+                    $match = substr($match, 0, strpos($match, '?'));
+                }
+                
+                if (strpos($match, '&') !== false) {
+                    $match = substr($match, 0, strpos($match, '&'));
+                }
+
+                if ($match) {
+                    $data .= $this->getText(realpath($this->get('_cssbase') . '/' . $match));
+                }
             }
 
             return $data;
@@ -195,19 +206,19 @@ class WFPacker extends JObject {
 
         return '';
     }
-    
+
     protected function compileLess($string, $path) {
         require_once(WF_ADMINISTRATOR . '/classes/lessc.inc.php');
-        
+
         $less = new lessc;
         // add file directory
         $less->addImportDir($path);
         // add joomla media folder
         $less->addImportDir(JPATH_SITE . 'media');
-        
+
         try {
             return $less->compile($string);
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             return "/* LESS file could not be compiled due to error - " . $e->getMessage() . " */";
         }
     }
@@ -219,9 +230,9 @@ class WFPacker extends JObject {
             if ($text = file_get_contents($file)) {
                 // process css files
                 if ($this->getType() == 'css') {
-                    
+
                     // compile less files
-                    if (preg_match('#\.less$#', $file)) {                        
+                    if (preg_match('#\.less$#', $file)) {
                         $text = $this->compileLess($text, dirname($file));
                     }
 
@@ -238,7 +249,7 @@ class WFPacker extends JObject {
 
                     // process urls
                     $text = preg_replace_callback('#url\s?\([\'"]?([^\'"\))]+)[\'"]?\)#', array('WFPacker', 'processPaths'), $text);
-                    
+
                     if ($minify) {
                         // minify
                         $text = $this->cssmin($text);
@@ -247,7 +258,7 @@ class WFPacker extends JObject {
                 // make sure text ends in a semi-colon;
                 if ($this->getType() == 'javascript') {
                     $text = rtrim(trim($text), ';') . ';';
-                    
+
                     if ($minify) {
                         $text = $this->jsmin($text);
                     }
