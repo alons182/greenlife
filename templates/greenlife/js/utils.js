@@ -105,7 +105,7 @@ function getScrollerWidth() {
  function limpiaForm(miForm) {
     
      // recorremos todos los campos que tiene el formulario
-     $(":input", miForm).each(function() {
+     jQuery(":input", miForm).each(function() {
      var type = this.type;
      var tag = this.tagName.toLowerCase();
      //limpiamos los valores de los campos…
@@ -120,3 +120,4 @@ function getScrollerWidth() {
     this.selectedIndex = -1;
      });
 }
+

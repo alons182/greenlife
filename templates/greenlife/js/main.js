@@ -1,5 +1,6 @@
 jQuery(function($) {
 
+    var theLanguage = $('html').attr('lang');
 
     resizes();                     // resize pagina
     $(window).scroll(resizes);     // calcula el desplazamiento de la pagina
@@ -12,7 +13,7 @@ jQuery(function($) {
 
     $(".tour").hover(function(event){
 
-      console.log($(this).attr("id"));
+      //console.log($(this).attr("id"));
       var myitem = $(this);
       var por_left = myitem[0].style.left;
       var pix_left = myitem[0].style.left;
@@ -68,10 +69,150 @@ jQuery(function($) {
    $('.botones li').on('click',function(e){
     //console.log($(this).attr('data-info'));
     
-    $(".info").find('article').hide();
-    $(".info").find('[data-id="'+ $(this).attr('data-info') +'"]').fadeIn(500);
+    if($(this).attr('data-info')=="book")
+    {
+       
+        var tour;
+     
+        tour =  $.trim($('.page-header > h2').text());
+        
+        $("#Activitie option[value='"+ tour +"']").attr("selected",true); //avistamiento pajaros
+
+        $(".chosen-select").trigger("chosen:updated");
+
+        $('#dialog').fadeIn(200);
+
+    }else{
+       $(".info").find('article').hide();
+       $(".info").find('[data-id="'+ $(this).attr('data-info') +'"]').fadeIn(500);
+    }
+   
    
   });
+
+   $('#btn-reserve ').on('click',function(e){
+      e.preventDefault();
+      
+      $('#dialog').fadeIn(200);
+    
+   
+  });
+
+    $('#dialog').find('.close').on('click',function(e){
+        e.preventDefault();
+        $('#dialog').fadeOut(200);
+        limpiaForm($('#reservationFormTour'));
+        limpiaChosen();
+   
+  });
+
+    $(".chosen-select").chosen({width: "100%"});
+
+   
+   
+
+  // LOAD ACTIVITIES FORM RESERVATION
+  $.getJSON('/helpers/activities.php',{lang:theLanguage}, function(data) {
+
+      var items = [];
+
+      var select = $('#Activitie').empty();
+        $.each(data, function(i,item) {
+            select.append( '<option value="'
+                                 + $.trim(item.title)
+                                 + '">'
+                                 + item.title
+                                 + '</option>' ); 
+
+
+     
+    });
+    
+    $(".chosen-select").trigger("chosen:updated");
+
+     //select.prepend('<option value="">Choose your activities</option>');
+
+  });
+
+  $.validator.setDefaults({ ignore: ":hidden:not(select)" })
+
+  $("#reservationFormTour").validate({
+
+    rules: {
+      
+        Activitie:{
+          required: true
+        },
+      
+         Adults: {
+
+          required: true,
+
+          number: true
+
+        }
+       
+
+      },
+
+      submitHandler: function(form) {
+
+        var formInput =  $('#reservationFormTour').serializeArray();
+      var url = "/helpers/reservation.php";
+      
+      $.post(url, formInput, function(data){
+            console.log(data);
+            
+            limpiaForm($('#reservationFormTour'));
+            limpiaChosen();
+
+            if(data=="ok")
+            {
+              if(theLanguage == "es-es")
+                $('.mensaje').html('<span class="ok">Reservación enviada correctamente</span>');
+              else
+                 $('.mensaje').html('<span class="ok">Reservation sent successfully</span>');
+            }             
+            else
+            {
+              if(theLanguage == "es-es")
+                $('.mensaje').html('<span class="error">Error Enviando la Reservacion. Verifique</span>');
+              else
+                $('.mensaje').html('<span class="error">Error sending the reservation</span>');
+            }
+              
+
+
+            setTimeout(function(){  
+                  $('.mensaje').fadeOut(200,function() {
+
+                  $('.mensaje span').remove();
+                  $('.mensaje').show();
+
+                });}, 2000);  
+
+
+          });
+       // form.submit();
+
+      }
+
+     });
+
+ // FUNCTION LIMPIAR FORM
+    function limpiaChosen() {
+    
+    $("#Activitie").val('').trigger("chosen:updated");
+    $("#Adults").val('').trigger("chosen:updated");
+    $("#Childrens").val('').trigger("chosen:updated");
+    
+    
+  }
+    
+                
+
+         
+          
 
     function resizes(){
             height_dispo = getWindowHeight() - ($('#main-header').height()) - ($('#main-footer').height());
