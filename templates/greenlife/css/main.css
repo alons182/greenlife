@@ -224,5 +224,7 @@ p{margin:0 0 20px}
 #main-header .right-info #menu ul li{float:none;-webkit-background-size:13px 12px;-moz-background-size:13px 12px;background-size:13px 12px;border-right:none;}
 #main-header .right-info #menu ul li a,#main-header .right-info #menu ul li span{padding:5px 5px 3px 5px;background-position:9px 9px;color:#fff}
 #main-header .right-info #menu ul li .active{background-color:transparent;color:#fff}
+#main-header .right-info #dialog{width:230px;}
+#main-header .right-info #dialog .column1,#main-header .right-info #dialog .column2{display:block;width:100%}
 #main .item-page .info-right .botones article img,#main .item-page .info-right .info article img{height:190px}
 }
