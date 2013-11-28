@@ -227,5 +227,6 @@ p{margin:0 0 20px}
 #main-header .right-info #dialog{width:230px;}
 #main-header .right-info #dialog .column1,#main-header .right-info #dialog .column2{display:block;width:100%}
 #main-header .right-info .window{margin-bottom:100px;top:15px;position:relative}
+#main-header .right-info .chosen-choices{width:auto !important}
 #main .item-page .info-right .botones article img,#main .item-page .info-right .info article img{height:190px}
 }
