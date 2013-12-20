@@ -80,7 +80,7 @@
 .icon-cart:before{content:"\e60b"}
 .icon-notebook:before{content:"\e60c"}
 body{background:#f0efed;color:#333;font:normal 14px georgia,sans-serif;height:100%;margin:0;overflow-y:scroll;padding:0;position:relative;background-attachment:fixed;background-color:transparent;background-position:center center;background-repeat:no-repeat,no-repeat;-webkit-background-size:cover,cover;-moz-background-size:cover,cover;background-size:cover,cover}
-.bgid-102,.bgid-105,.bgid-118,.bgid-119,.bgid-120,.bgid-121,.bgid-122,.bgid-123,.bgid-124,.bgid-125,.bgid-126,.bgid-127,.bgid-129,.bgid-140,.bgid-104,.bgid-130,.bgid-131,.bgid-132,.bgid-133,.bgid-134,.bgid-135,.bgid-136,.bgid-137,.bgid-138,.bgid-139{background-image:url("../img/t1.jpg")}
+.bgid-102,.bgid-153,.bgid-154,.bgid-155,.bgid-152,.bgid-105,.bgid-118,.bgid-119,.bgid-120,.bgid-121,.bgid-122,.bgid-123,.bgid-124,.bgid-125,.bgid-126,.bgid-127,.bgid-129,.bgid-140,.bgid-104,.bgid-130,.bgid-131,.bgid-132,.bgid-133,.bgid-134,.bgid-135,.bgid-136,.bgid-137,.bgid-138,.bgid-139{background-image:url("../img/t1.jpg")}
 .bgid-117,.bgid-130{background-image:url("../img/borinquen.jpg")}
 .btn{background:#fcb811;padding:.5em;text-align:center;text-transform:uppercase;-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);font-size:14px;font-weight:bold;}
 .btn:hover{background:#86b340}
@@ -119,12 +119,13 @@ p{margin:0 0 20px}
 #main-header .right-info .window{background:url("../img/bg.jpg") repeat #fff;display:none;padding:20px;position:fixed;top:120px;z-index:9999;}
 #main-header .right-info .window .close{color:#fff;padding:6px 6px 6px 6px;position:absolute;right:10px;text-decoration:none;top:16px;-webkit-border-radius:5px;border-radius:5px}
 #main-header .right-info #btn_nav{display:none}
-#main-header .right-info #menu ul li{display:inline-block;vertical-align:top;padding:.3em 1em;border-right:1px solid #86b340;}
-#main-header .right-info #menu ul li a,#main-header .right-info #menu ul li span{color:#20764b;display:block;text-transform:uppercase;}
-#main-header .right-info #menu ul li a:hover,#main-header .right-info #menu ul li span:hover{color:#fcb811}
-#main-header .right-info #menu ul li .nav-child{display:none}
-#main-header .right-info #menu ul .active a{color:#fcb811}
-#main-header .right-info #menu ul .last{border-right:none}
+#main-header .right-info #menu ul.menu li{position:relative;display:inline-block;vertical-align:top;padding:.3em 1em;border-right:1px solid #86b340;}
+#main-header .right-info #menu ul.menu li a,#main-header .right-info #menu ul.menu li span{color:#20764b;display:block;text-transform:uppercase;cursor:pointer;}
+#main-header .right-info #menu ul.menu li a:hover,#main-header .right-info #menu ul.menu li span:hover{color:#fcb811}
+#main-header .right-info #menu ul.menu li .nav-child{position:absolute;display:none;width:139px;left:-22px;top:39px;padding:21px 20px 29px 20px;list-style:none !important;zoom:1;z-index:200;background:url("../img/bg.jpg") repeat #fff;margin:0;border-top:4px solid #86b340;font-size:12px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);}
+#main-header .right-info #menu ul.menu li .nav-child .nav-child{position:absolute;display:none;width:238px;left:105px;top:0;padding:21px 20px 29px 20px;list-style:none !important;zoom:1;z-index:200;background:#fff;margin:0;border-top:4px solid #f5c34c;font-size:12px}
+#main-header .right-info #menu ul.menu .active a{color:#fcb811}
+#main-header .right-info #menu ul.menu .last{border-right:none}
 #main #tours,#main .item-page_tours_home,#main .blog-featured_tours_home{min-height:100%;overflow:hidden;display:block;position:relative;}
 #main #tours ul,#main .item-page_tours_home ul,#main .blog-featured_tours_home ul{margin:0;padding:0;list-style:none;height:100%;overflow:hidden;}
 #main #tours ul li,#main .item-page_tours_home ul li,#main .blog-featured_tours_home ul li{position:absolute;list-style-type:none;padding:0;margin:0;height:100%;width:80%;cursor:pointer;background-position:center top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;}

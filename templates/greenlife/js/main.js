@@ -6,6 +6,22 @@ jQuery(function($) {
     $(window).scroll(resizes);     // calcula el desplazamiento de la pagina
     $(window).resize(resizes);     // calcula el cambio de tamaño de la pagina
   
+    //MENU 
+    $menu = $('#menu'),
+    //$submenu = $('.sub-menu');
+
+    $menu.find(".parent").hoverIntent({
+        over: function() {
+              $(this).find(">.nav-child").slideDown(200 );
+            },
+        out:  function() {
+              $(this).find(">.nav-child").slideUp(200);
+            },
+        timeout: 200
+
+        });
+  
+
      // NAV MOBILE
     $('#btn_nav').click(function(){
         $('#main-header nav').toggle();
