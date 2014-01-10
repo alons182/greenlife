@@ -36,6 +36,7 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
      <!--<link rel="icon" type="image/png" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/favicon_32x32.ico">-->
     
     <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/ui-lightness/jquery-ui-1.10.3.custom.min.css">
+    <link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/vendor/lightbox/css/lightbox.css" rel="stylesheet">
 	<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/vendor/modernizr-2.6.2.min.js"></script>
      
      
@@ -85,6 +86,7 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
         <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/vendor/jquery.validate.min.js"></script>
         <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/vendor/jquery-ui.min.js"></script>
         <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/vendor/jquery.hoverIntent.minified.js"></script>
+        <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/vendor/lightbox/js/lightbox-2.6.min.js"></script>
         <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/utils.js"></script>
         <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/main.js"></script>
     
