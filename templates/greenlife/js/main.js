@@ -239,7 +239,7 @@ jQuery(function($) {
 
             if(getWindowWidth() > 768){
                 
-                 if(getWindowHeight() >= 679 && getWindowHeight() <= 768){
+                 if(getWindowHeight() >= 600 && getWindowHeight() <= 768){
                   $('#main').height(height_dispo + 90).width(width_dispo);
                  }
                  else
