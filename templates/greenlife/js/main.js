@@ -235,11 +235,16 @@ jQuery(function($) {
     function resizes(){
             height_dispo = getWindowHeight() - ($('#main-header').height()) - ($('#main-footer').height());
             width_dispo = getWindowWidth() - getScrollerWidth();            
-           
+            console.log(getWindowHeight() );
 
             if(getWindowWidth() > 768){
                 
-                 $('#main').height(height_dispo).width(width_dispo);
+                 if(getWindowHeight() == 679){
+                  $('#main').height(height_dispo + 90).width(width_dispo);
+                 }
+                 else
+                  $('#main').height(height_dispo).width(width_dispo);
+                 
                  $('.blog-featured_tours_home li').height(height_dispo);//.width(width_dispo);
                
             }else
