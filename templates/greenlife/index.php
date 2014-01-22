@@ -56,8 +56,8 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
                         <a href="/en" title="Ingles">Ingles</a>
                     </div>  
                     <div id="redes">
-                        <a href="#" class="icon-facebook"></a> 
-                        <a href="#" class="icon-twitter"></a>
+                        <a href="https://www.facebook.com/pages/Costa-Rica-Green-Life-Tours/164672413564461?ref=hl" class="icon-facebook" title="Facebook" target="_blank"></a> 
+                        <a href="http://www.tripadvisor.com.mx/Attraction_Review-g309240-d5978695-Reviews-Costa_Rica_Green_Life_Private_Tours-Liberia_Province_of_Guanacaste.html" class="icon-trip" title="Trp Advisor" target="_blank"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/Trip-Advisor-Logo.jpg" alt="Trip Advisor" /></a>
                         
                     </div>
                     <jdoc:include type="modules" name="btn-reserve" style="none" />
