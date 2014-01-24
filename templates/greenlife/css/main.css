@@ -80,7 +80,7 @@
 .icon-cart:before{content:"\e60b"}
 .icon-notebook:before{content:"\e60c"}
 body{background:#f0efed;color:#333;font:normal 14px georgia,sans-serif;height:100%;margin:0;overflow-y:scroll;padding:0;position:relative;background-attachment:fixed;background-color:transparent;background-position:center center;background-repeat:no-repeat,no-repeat;-webkit-background-size:cover,cover;-moz-background-size:cover,cover;background-size:cover,cover}
-.bgid-102,.bgid-153,.bgid-154,.bgid-155,.bgid-152,.bgid-105,.bgid-118,.bgid-119,.bgid-121,.bgid-122,.bgid-127,.bgid-129,.bgid-140,.bgid-104,.bgid-131,.bgid-134,.bgid-135{background-image:url("../img/t1.jpg")}
+.bgid-102,.bgid-153,.bgid-154,.bgid-155,.bgid-152,.bgid-105,.bgid-118,.bgid-119,.bgid-121,.bgid-122,.bgid-127,.bgid-129,.bgid-140,.bgid-104,.bgid-131,.bgid-134,.bgid-135,.bgid-103,.bgid-128{background-image:url("../img/t1.jpg")}
 .bgid-117,.bgid-130{background-image:url("../img/borinquen.jpg")}
 .bgid-123,.bgid-136{background-image:url("../img/birdwatching.jpg")}
 .bgid-118,.bgid-131{background-image:url("../img/megacombo.jpg")}
@@ -200,6 +200,9 @@ p{margin:0 0 20px}
 #main .item-page .info-right .info .binoculares,#main .blog .info-right .info .binoculares,#main .category-list .info-right .info .binoculares{background-position:-173px -15px;height:60px;width:64px}
 #main .item-page .info-right .info .repelent,#main .blog .info-right .info .repelent,#main .category-list .info-right .info .repelent{background-position:-78px -8px;height:60px;width:33px}
 #main .item-page .info-right .info .sandals,#main .blog .info-right .info .sandals,#main .category-list .info-right .info .sandals{background-position:-437px -20px;height:54px;width:51px}
+#main .item-page .TA_cdswritereviewlg,#main .blog .TA_cdswritereviewlg,#main .category-list .TA_cdswritereviewlg,#main .item-page .TA_selfserveprop,#main .blog .TA_selfserveprop,#main .category-list .TA_selfserveprop{display:inline-block;vertical-align:top}
+#main .item-page .TA_cdswritereviewlg,#main .blog .TA_cdswritereviewlg,#main .category-list .TA_cdswritereviewlg{margin-right:20px}
+#main .item-page .TA_selfserveprop #CDSWIDSSP,#main .blog .TA_selfserveprop #CDSWIDSSP,#main .category-list .TA_selfserveprop #CDSWIDSSP{width:100% !important}
 #main .b2jcontainer{margin:30px auto !important;width:1280px !important;background:#fff url("../img/bg.jpg") repeat !important;padding:1em !important;color:#333 !important;}
 #main .b2jcontainer h2{background:#86b340}
 #main .b2jcontainer .controls{line-height:24px}
