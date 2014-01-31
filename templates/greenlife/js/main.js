@@ -33,20 +33,24 @@ jQuery(function($) {
       var myitem = $(this);
       var por_left = myitem[0].style.left;
       var pix_left = myitem[0].style.left;
+
      
       switch($(this).attr("id")) {
           case 't1': 
-                $('#t2').animate({"left":"70%"});
-                $('#t3').animate({"left":"80%"});
-                $('#t4').animate({"left":"90%"});
+                $('#t2').animate({"left":"60%"});
+                $('#t3').animate({"left":"70%"});
+                $('#t4').animate({"left":"80%"});
+                $('#t5').animate({"left":"90%"});
 
                 
             break;
           case 't2': 
                 if ( por_left == '10%' || por_left=='' ) {
-                    $('#t3').animate({"left":"80%"});
-                    $('#t4').animate({"left":"90%"});
+                    $('#t3').animate({"left":"70%"});
+                    $('#t4').animate({"left":"80%"});
+                    $('#t5').animate({"left":"90%"});
                     $('#t2').animate({"left":"10%"});
+
                     
                 }
                 else {
@@ -57,7 +61,8 @@ jQuery(function($) {
             break;
           case 't3': 
              if ( por_left == '20%' || por_left=='' ) {
-                    $('#t4').animate({"left":"90%"});
+                    $('#t5').animate({"left":"90%"});
+                    $('#t4').animate({"left":"80%"});
                     $('#t3').animate({"left":"20%"});
                     $('#t2').animate({"left":"10%"});
                    
@@ -70,7 +75,23 @@ jQuery(function($) {
                  
             break;
            case 't4': 
+                
+                if ( por_left == '30%' || por_left=='' ) {
+                    $('#t5').animate({"left":"90%"});
+                    $('#t4').animate({"left":"30%"});
+                    $('#t3').animate({"left":"20%"});
+                    $('#t2').animate({"left":"10%"});
+                 }
+                  else {
+                    $('#t4').animate({"left":"30%"});
+                    $('#t3').animate({"left":"20%"});
+                    $('#t2').animate({"left":"10%"});
+                   
+                  }
+            break;
+           case 't5': 
                 if ( por_left == '90%' || por_left=='' ) {
+                    $('#t5').animate({"left":"40%"});
                     $('#t4').animate({"left":"30%"});
                     $('#t3').animate({"left":"20%"});
                     $('#t2').animate({"left":"10%"});
