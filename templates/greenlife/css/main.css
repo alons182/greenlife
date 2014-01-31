@@ -240,6 +240,8 @@ p{margin:0 0 20px}
 #main .b2jcontainer h2{margin:0}
 }@media only screen and (max-width: 800px){#main-header #logo{margin-top:10px;width:203px}
 #main-header .right-info #menu{font-size:12px}
+#main-header .right-info .icon-trip{display:none}
+#main-header .right-info #redes{width:auto}
 #main #tours,#main .item-page_tours_home,#main .blog-featured_tours_home{position:static;}
 #main #tours ul li,#main .item-page_tours_home ul li,#main .blog-featured_tours_home ul li{position:static;width:100%;left:0 !important;display:block;height:500px !important;}
 #main #tours ul li .tour-info,#main .item-page_tours_home ul li .tour-info,#main .blog-featured_tours_home ul li .tour-info{position:relative;width:70%;margin:0 auto;right:0;}
