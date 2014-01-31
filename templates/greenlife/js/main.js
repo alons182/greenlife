@@ -200,7 +200,7 @@ jQuery(function($) {
       var url = "/helpers/reservation.php";
       
       $.post(url, formInput, function(data){
-            console.log(data);
+            //console.log(data);
             
             limpiaForm($('#reservationFormTour'));
             limpiaChosen();
@@ -256,7 +256,7 @@ jQuery(function($) {
     function resizes(){
             height_dispo = getWindowHeight() - ($('#main-header').height()) - ($('#main-footer').height());
             width_dispo = getWindowWidth() - getScrollerWidth();            
-            console.log(getWindowHeight() );
+            //console.log(getWindowHeight() );
 
             if(getWindowWidth() > 768){
                 
