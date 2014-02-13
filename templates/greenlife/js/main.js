@@ -266,12 +266,12 @@ jQuery(function($) {
                  else
                   $('#main').height(height_dispo).width(width_dispo);
                  
-                 $('.blog-featured_tours_home li').height(height_dispo);//.width(width_dispo);
+                 //$('.blog-featured_tours_home li').height(height_dispo);//.width(width_dispo);
                
             }else
               {  
                $('#main').height('auto').width('auto');
-               $('.blog-featured_tours_home li').height('500px');
+               //$('.blog-featured_tours_home li').height('500px');
             }
            
 

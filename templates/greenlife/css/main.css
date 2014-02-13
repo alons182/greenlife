@@ -89,6 +89,7 @@ body{background:#f0efed;color:#333;font:normal 14px georgia,sans-serif;height:10
 .bgid-124,.bgid-137{background-image:url("../img/rincondelavieja.jpg")}
 .bgid-120,.bgid-133{background-image:url("../img/rioceleste.jpg")}
 .bgid-125,.bgid-138{background-image:url("../img/santarosa.jpg")}
+.bgid-101{background-image:url("../img/santarosa.jpg")}
 .btn{background:#fcb811;padding:.5em;text-align:center;text-transform:uppercase;-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);font-size:14px;font-weight:bold;}
 .btn:hover{background:#86b340}
 a,a:visited{color:#fff;text-decoration:none}
@@ -158,56 +159,56 @@ p{margin:0 0 20px}
 #main #tours ul #t5,#main .item-page_tours_home ul #t5,#main .blog-featured_tours_home ul #t5{background-image:url("../img/rafting.jpg");z-index:200;left:80%;}
 #main #tours ul #t5 .tour-title,#main .item-page_tours_home ul #t5 .tour-title,#main .blog-featured_tours_home ul #t5 .tour-title{background:rgba(242,101,34,0.8)}
 #main #tours .btn-more:hover,#main .item-page_tours_home .btn-more:hover,#main .blog-featured_tours_home .btn-more:hover{background:#86b340}
-#main .item-page,#main .blog,#main .category-list{margin:20px auto;width:1280px;background:rgba(255,255,255,0.9);padding:1em;}
-#main .item-page h1,#main .blog h1,#main .category-list h1{color:#f26522}
-#main .item-page h2,#main .blog h2,#main .category-list h2{color:#86b340}
-#main .item-page p,#main .blog p,#main .category-list p{line-height:24px}
-#main .item-page .page-header h2,#main .blog .page-header h2,#main .category-list .page-header h2{color:#f26522;font-size:1.5em}
-#main .item-page .main-info,#main .blog .main-info,#main .category-list .main-info,#main .item-page .info-right,#main .blog .info-right,#main .category-list .info-right{display:inline-block;vertical-align:top}
-#main .item-page .main-info,#main .blog .main-info,#main .category-list .main-info{width:65%;margin-right:10px}
-#main .item-page .info-right,#main .blog .info-right,#main .category-list .info-right{width:30%;}
-#main .item-page .info-right .botones,#main .blog .info-right .botones,#main .category-list .info-right .botones{position:absolute;}
-#main .item-page .info-right .botones ul,#main .blog .info-right .botones ul,#main .category-list .info-right .botones ul{margin:0;padding:0;}
-#main .item-page .info-right .botones ul li,#main .blog .info-right .botones ul li,#main .category-list .info-right .botones ul li{background:#ccc;cursor:pointer;height:42px;list-style:none;margin:5px 5px;position:relative;-webkit-border-radius:5px;border-radius:5px;}
-#main .item-page .info-right .botones ul li span,#main .blog .info-right .botones ul li span,#main .category-list .info-right .botones ul li span{color:#fff;display:block;font-size:12px;height:16px;text-align:center;width:50px}
-#main .item-page .info-right .botones ul li .icon-image,#main .blog .info-right .botones ul li .icon-image,#main .category-list .info-right .botones ul li .icon-image,#main .item-page .info-right .botones ul li .icon-signup,#main .blog .info-right .botones ul li .icon-signup,#main .category-list .info-right .botones ul li .icon-signup,#main .item-page .info-right .botones ul li .icon-notebook,#main .blog .info-right .botones ul li .icon-notebook,#main .category-list .info-right .botones ul li .icon-notebook,#main .item-page .info-right .botones ul li .icon-coin,#main .blog .info-right .botones ul li .icon-coin,#main .category-list .info-right .botones ul li .icon-coin,#main .item-page .info-right .botones ul li .icon-cart,#main .blog .info-right .botones ul li .icon-cart,#main .category-list .info-right .botones ul li .icon-cart,#main .item-page .info-right .botones ul li .icon-users,#main .blog .info-right .botones ul li .icon-users,#main .category-list .info-right .botones ul li .icon-users{color:rgba(255,255,255,0.6);font-size:1.3em;padding-bottom:5px;padding-top:2px}
-#main .item-page .info-right .botones ul #btn-images,#main .blog .info-right .botones ul #btn-images,#main .category-list .info-right .botones ul #btn-images{background:#fcb811}
-#main .item-page .info-right .botones ul #btn-details,#main .blog .info-right .botones ul #btn-details,#main .category-list .info-right .botones ul #btn-details{background:#86b340}
-#main .item-page .info-right .botones ul #btn-rates,#main .blog .info-right .botones ul #btn-rates,#main .category-list .info-right .botones ul #btn-rates{background:#20764b}
-#main .item-page .info-right .botones ul #btn-book,#main .blog .info-right .botones ul #btn-book,#main .category-list .info-right .botones ul #btn-book{background:#f26522}
-#main .item-page .info-right .info,#main .blog .info-right .info,#main .category-list .info-right .info{float:right;background:#fff url("../img/bg.jpg") repeat;width:80%;padding:1em .8em 1em 2em;min-height:200px;line-height:24px;}
-#main .item-page .info-right .info article,#main .blog .info-right .info article,#main .category-list .info-right .info article{display:none;}
-#main .item-page .info-right .info article img,#main .blog .info-right .info article img,#main .category-list .info-right .info article img{width:100%;height:100%}
-#main .item-page .info-right .info article h3,#main .blog .info-right .info article h3,#main .category-list .info-right .info article h3{color:#f26522}
-#main .item-page .info-right .info article p,#main .blog .info-right .info article p,#main .category-list .info-right .info article p{margin-bottom:5px}
-#main .item-page .info-right .info article strong,#main .blog .info-right .info article strong,#main .category-list .info-right .info article strong{color:#86b340}
-#main .item-page .info-right .info article[data-id ="images"],#main .blog .info-right .info article[data-id ="images"],#main .category-list .info-right .info article[data-id ="images"]{display:block;}
-#main .item-page .info-right .info article[data-id ="images"] .btn,#main .blog .info-right .info article[data-id ="images"] .btn,#main .category-list .info-right .info article[data-id ="images"] .btn{position:relative;top:-40px;left:10px}
-#main .item-page .info-right .info article[data-id ="images"] ul,#main .blog .info-right .info article[data-id ="images"] ul,#main .category-list .info-right .info article[data-id ="images"] ul{display:none}
-#main .item-page .info-right .info .iconos,#main .blog .info-right .info .iconos,#main .category-list .info-right .info .iconos{background:url("../img/iconos.png") no-repeat;display:inline-block;margin:5px;vertical-align:top}
-#main .item-page .info-right .info .hat,#main .blog .info-right .info .hat,#main .category-list .info-right .info .hat{background-position:0 -23px;height:51px;width:79px}
-#main .item-page .info-right .info .sunglasses,#main .blog .info-right .info .sunglasses,#main .category-list .info-right .info .sunglasses{background-position:-595px -22px;height:51px;width:56px}
-#main .item-page .info-right .info .camera,#main .blog .info-right .info .camera,#main .category-list .info-right .info .camera{background-position:-112px -26px;height:47px;width:59px}
-#main .item-page .info-right .info .sunscreen,#main .blog .info-right .info .sunscreen,#main .category-list .info-right .info .sunscreen{background-position:-237px -15px;height:60px;width:39px}
-#main .item-page .info-right .info .money,#main .blog .info-right .info .money,#main .category-list .info-right .info .money{background-position:-276px -24px;height:61px;width:46px}
-#main .item-page .info-right .info .hiking-boots,#main .blog .info-right .info .hiking-boots,#main .category-list .info-right .info .hiking-boots{background-position:-325px -15px;height:63px;width:56px}
-#main .item-page .info-right .info .rain-gear,#main .blog .info-right .info .rain-gear,#main .category-list .info-right .info .rain-gear{background-position:-389px -12px;height:63px;width:48px}
-#main .item-page .info-right .info .water-shoes,#main .blog .info-right .info .water-shoes,#main .category-list .info-right .info .water-shoes{background-position:-864px -13px;height:63px;width:64px}
-#main .item-page .info-right .info .swinsuit,#main .blog .info-right .info .swinsuit,#main .category-list .info-right .info .swinsuit{background-position:-547px -18px;height:54px;width:40px}
-#main .item-page .info-right .info .water-camera,#main .blog .info-right .info .water-camera,#main .category-list .info-right .info .water-camera{background-position:-592px -118px;height:54px;width:71px}
-#main .item-page .info-right .info .walking-shoes,#main .blog .info-right .info .walking-shoes,#main .category-list .info-right .info .walking-shoes{background-position:-674px -113px;height:47px;width:61px}
-#main .item-page .info-right .info .clothes,#main .blog .info-right .info .clothes,#main .category-list .info-right .info .clothes{background-position:-738px -12px;height:54px;width:55px}
-#main .item-page .info-right .info .towels,#main .blog .info-right .info .towels,#main .category-list .info-right .info .towels{background-position:-793px -16px;height:56px;width:69px}
-#main .item-page .info-right .info .long-pants,#main .blog .info-right .info .long-pants,#main .category-list .info-right .info .long-pants{background-position:-948px -9px;height:64px;width:41px}
-#main .item-page .info-right .info .sneakers,#main .blog .info-right .info .sneakers,#main .category-list .info-right .info .sneakers{background-position:-490px -22px;height:54px;width:57px}
-#main .item-page .info-right .info .light-clothing,#main .blog .info-right .info .light-clothing,#main .category-list .info-right .info .light-clothing{background-position:-975px -109px;height:51px;width:49px}
-#main .item-page .info-right .info .passport,#main .blog .info-right .info .passport,#main .category-list .info-right .info .passport{background-position:-671px -16px;height:55px;width:59px}
-#main .item-page .info-right .info .binoculares,#main .blog .info-right .info .binoculares,#main .category-list .info-right .info .binoculares{background-position:-173px -15px;height:60px;width:64px}
-#main .item-page .info-right .info .repelent,#main .blog .info-right .info .repelent,#main .category-list .info-right .info .repelent{background-position:-78px -8px;height:60px;width:33px}
-#main .item-page .info-right .info .sandals,#main .blog .info-right .info .sandals,#main .category-list .info-right .info .sandals{background-position:-437px -20px;height:54px;width:51px}
-#main .item-page .TA_cdswritereviewlg,#main .blog .TA_cdswritereviewlg,#main .category-list .TA_cdswritereviewlg,#main .item-page .TA_selfserveprop,#main .blog .TA_selfserveprop,#main .category-list .TA_selfserveprop{display:inline-block;vertical-align:top}
-#main .item-page .TA_cdswritereviewlg,#main .blog .TA_cdswritereviewlg,#main .category-list .TA_cdswritereviewlg{margin-right:20px}
-#main .item-page .TA_selfserveprop #CDSWIDSSP,#main .blog .TA_selfserveprop #CDSWIDSSP,#main .category-list .TA_selfserveprop #CDSWIDSSP{width:100% !important}
+#main .item-page,#main .blog,#main .category-list,#main .text404{margin:20px auto;width:1280px;background:rgba(255,255,255,0.9);padding:1em;}
+#main .item-page h1,#main .blog h1,#main .category-list h1,#main .text404 h1{color:#f26522}
+#main .item-page h2,#main .blog h2,#main .category-list h2,#main .text404 h2{color:#86b340}
+#main .item-page p,#main .blog p,#main .category-list p,#main .text404 p{line-height:24px}
+#main .item-page .page-header h2,#main .blog .page-header h2,#main .category-list .page-header h2,#main .text404 .page-header h2{color:#f26522;font-size:1.5em}
+#main .item-page .main-info,#main .blog .main-info,#main .category-list .main-info,#main .text404 .main-info,#main .item-page .info-right,#main .blog .info-right,#main .category-list .info-right,#main .text404 .info-right{display:inline-block;vertical-align:top}
+#main .item-page .main-info,#main .blog .main-info,#main .category-list .main-info,#main .text404 .main-info{width:65%;margin-right:10px}
+#main .item-page .info-right,#main .blog .info-right,#main .category-list .info-right,#main .text404 .info-right{width:30%;}
+#main .item-page .info-right .botones,#main .blog .info-right .botones,#main .category-list .info-right .botones,#main .text404 .info-right .botones{position:absolute;}
+#main .item-page .info-right .botones ul,#main .blog .info-right .botones ul,#main .category-list .info-right .botones ul,#main .text404 .info-right .botones ul{margin:0;padding:0;}
+#main .item-page .info-right .botones ul li,#main .blog .info-right .botones ul li,#main .category-list .info-right .botones ul li,#main .text404 .info-right .botones ul li{background:#ccc;cursor:pointer;height:42px;list-style:none;margin:5px 5px;position:relative;-webkit-border-radius:5px;border-radius:5px;}
+#main .item-page .info-right .botones ul li span,#main .blog .info-right .botones ul li span,#main .category-list .info-right .botones ul li span,#main .text404 .info-right .botones ul li span{color:#fff;display:block;font-size:12px;height:16px;text-align:center;width:50px}
+#main .item-page .info-right .botones ul li .icon-image,#main .blog .info-right .botones ul li .icon-image,#main .category-list .info-right .botones ul li .icon-image,#main .text404 .info-right .botones ul li .icon-image,#main .item-page .info-right .botones ul li .icon-signup,#main .blog .info-right .botones ul li .icon-signup,#main .category-list .info-right .botones ul li .icon-signup,#main .text404 .info-right .botones ul li .icon-signup,#main .item-page .info-right .botones ul li .icon-notebook,#main .blog .info-right .botones ul li .icon-notebook,#main .category-list .info-right .botones ul li .icon-notebook,#main .text404 .info-right .botones ul li .icon-notebook,#main .item-page .info-right .botones ul li .icon-coin,#main .blog .info-right .botones ul li .icon-coin,#main .category-list .info-right .botones ul li .icon-coin,#main .text404 .info-right .botones ul li .icon-coin,#main .item-page .info-right .botones ul li .icon-cart,#main .blog .info-right .botones ul li .icon-cart,#main .category-list .info-right .botones ul li .icon-cart,#main .text404 .info-right .botones ul li .icon-cart,#main .item-page .info-right .botones ul li .icon-users,#main .blog .info-right .botones ul li .icon-users,#main .category-list .info-right .botones ul li .icon-users,#main .text404 .info-right .botones ul li .icon-users{color:rgba(255,255,255,0.6);font-size:1.3em;padding-bottom:5px;padding-top:2px}
+#main .item-page .info-right .botones ul #btn-images,#main .blog .info-right .botones ul #btn-images,#main .category-list .info-right .botones ul #btn-images,#main .text404 .info-right .botones ul #btn-images{background:#fcb811}
+#main .item-page .info-right .botones ul #btn-details,#main .blog .info-right .botones ul #btn-details,#main .category-list .info-right .botones ul #btn-details,#main .text404 .info-right .botones ul #btn-details{background:#86b340}
+#main .item-page .info-right .botones ul #btn-rates,#main .blog .info-right .botones ul #btn-rates,#main .category-list .info-right .botones ul #btn-rates,#main .text404 .info-right .botones ul #btn-rates{background:#20764b}
+#main .item-page .info-right .botones ul #btn-book,#main .blog .info-right .botones ul #btn-book,#main .category-list .info-right .botones ul #btn-book,#main .text404 .info-right .botones ul #btn-book{background:#f26522}
+#main .item-page .info-right .info,#main .blog .info-right .info,#main .category-list .info-right .info,#main .text404 .info-right .info{float:right;background:#fff url("../img/bg.jpg") repeat;width:80%;padding:1em .8em 1em 2em;min-height:200px;line-height:24px;}
+#main .item-page .info-right .info article,#main .blog .info-right .info article,#main .category-list .info-right .info article,#main .text404 .info-right .info article{display:none;}
+#main .item-page .info-right .info article img,#main .blog .info-right .info article img,#main .category-list .info-right .info article img,#main .text404 .info-right .info article img{width:100%;height:100%}
+#main .item-page .info-right .info article h3,#main .blog .info-right .info article h3,#main .category-list .info-right .info article h3,#main .text404 .info-right .info article h3{color:#f26522}
+#main .item-page .info-right .info article p,#main .blog .info-right .info article p,#main .category-list .info-right .info article p,#main .text404 .info-right .info article p{margin-bottom:5px}
+#main .item-page .info-right .info article strong,#main .blog .info-right .info article strong,#main .category-list .info-right .info article strong,#main .text404 .info-right .info article strong{color:#86b340}
+#main .item-page .info-right .info article[data-id ="images"],#main .blog .info-right .info article[data-id ="images"],#main .category-list .info-right .info article[data-id ="images"],#main .text404 .info-right .info article[data-id ="images"]{display:block;}
+#main .item-page .info-right .info article[data-id ="images"] .btn,#main .blog .info-right .info article[data-id ="images"] .btn,#main .category-list .info-right .info article[data-id ="images"] .btn,#main .text404 .info-right .info article[data-id ="images"] .btn{position:relative;top:-40px;left:10px}
+#main .item-page .info-right .info article[data-id ="images"] ul,#main .blog .info-right .info article[data-id ="images"] ul,#main .category-list .info-right .info article[data-id ="images"] ul,#main .text404 .info-right .info article[data-id ="images"] ul{display:none}
+#main .item-page .info-right .info .iconos,#main .blog .info-right .info .iconos,#main .category-list .info-right .info .iconos,#main .text404 .info-right .info .iconos{background:url("../img/iconos.png") no-repeat;display:inline-block;margin:5px;vertical-align:top}
+#main .item-page .info-right .info .hat,#main .blog .info-right .info .hat,#main .category-list .info-right .info .hat,#main .text404 .info-right .info .hat{background-position:0 -23px;height:51px;width:79px}
+#main .item-page .info-right .info .sunglasses,#main .blog .info-right .info .sunglasses,#main .category-list .info-right .info .sunglasses,#main .text404 .info-right .info .sunglasses{background-position:-595px -22px;height:51px;width:56px}
+#main .item-page .info-right .info .camera,#main .blog .info-right .info .camera,#main .category-list .info-right .info .camera,#main .text404 .info-right .info .camera{background-position:-112px -26px;height:47px;width:59px}
+#main .item-page .info-right .info .sunscreen,#main .blog .info-right .info .sunscreen,#main .category-list .info-right .info .sunscreen,#main .text404 .info-right .info .sunscreen{background-position:-237px -15px;height:60px;width:39px}
+#main .item-page .info-right .info .money,#main .blog .info-right .info .money,#main .category-list .info-right .info .money,#main .text404 .info-right .info .money{background-position:-276px -24px;height:61px;width:46px}
+#main .item-page .info-right .info .hiking-boots,#main .blog .info-right .info .hiking-boots,#main .category-list .info-right .info .hiking-boots,#main .text404 .info-right .info .hiking-boots{background-position:-325px -15px;height:63px;width:56px}
+#main .item-page .info-right .info .rain-gear,#main .blog .info-right .info .rain-gear,#main .category-list .info-right .info .rain-gear,#main .text404 .info-right .info .rain-gear{background-position:-389px -12px;height:63px;width:48px}
+#main .item-page .info-right .info .water-shoes,#main .blog .info-right .info .water-shoes,#main .category-list .info-right .info .water-shoes,#main .text404 .info-right .info .water-shoes{background-position:-864px -13px;height:63px;width:64px}
+#main .item-page .info-right .info .swinsuit,#main .blog .info-right .info .swinsuit,#main .category-list .info-right .info .swinsuit,#main .text404 .info-right .info .swinsuit{background-position:-547px -18px;height:54px;width:40px}
+#main .item-page .info-right .info .water-camera,#main .blog .info-right .info .water-camera,#main .category-list .info-right .info .water-camera,#main .text404 .info-right .info .water-camera{background-position:-592px -118px;height:54px;width:71px}
+#main .item-page .info-right .info .walking-shoes,#main .blog .info-right .info .walking-shoes,#main .category-list .info-right .info .walking-shoes,#main .text404 .info-right .info .walking-shoes{background-position:-674px -113px;height:47px;width:61px}
+#main .item-page .info-right .info .clothes,#main .blog .info-right .info .clothes,#main .category-list .info-right .info .clothes,#main .text404 .info-right .info .clothes{background-position:-738px -12px;height:54px;width:55px}
+#main .item-page .info-right .info .towels,#main .blog .info-right .info .towels,#main .category-list .info-right .info .towels,#main .text404 .info-right .info .towels{background-position:-793px -16px;height:56px;width:69px}
+#main .item-page .info-right .info .long-pants,#main .blog .info-right .info .long-pants,#main .category-list .info-right .info .long-pants,#main .text404 .info-right .info .long-pants{background-position:-948px -9px;height:64px;width:41px}
+#main .item-page .info-right .info .sneakers,#main .blog .info-right .info .sneakers,#main .category-list .info-right .info .sneakers,#main .text404 .info-right .info .sneakers{background-position:-490px -22px;height:54px;width:57px}
+#main .item-page .info-right .info .light-clothing,#main .blog .info-right .info .light-clothing,#main .category-list .info-right .info .light-clothing,#main .text404 .info-right .info .light-clothing{background-position:-975px -109px;height:51px;width:49px}
+#main .item-page .info-right .info .passport,#main .blog .info-right .info .passport,#main .category-list .info-right .info .passport,#main .text404 .info-right .info .passport{background-position:-671px -16px;height:55px;width:59px}
+#main .item-page .info-right .info .binoculares,#main .blog .info-right .info .binoculares,#main .category-list .info-right .info .binoculares,#main .text404 .info-right .info .binoculares{background-position:-173px -15px;height:60px;width:64px}
+#main .item-page .info-right .info .repelent,#main .blog .info-right .info .repelent,#main .category-list .info-right .info .repelent,#main .text404 .info-right .info .repelent{background-position:-78px -8px;height:60px;width:33px}
+#main .item-page .info-right .info .sandals,#main .blog .info-right .info .sandals,#main .category-list .info-right .info .sandals,#main .text404 .info-right .info .sandals{background-position:-437px -20px;height:54px;width:51px}
+#main .item-page .TA_cdswritereviewlg,#main .blog .TA_cdswritereviewlg,#main .category-list .TA_cdswritereviewlg,#main .text404 .TA_cdswritereviewlg,#main .item-page .TA_selfserveprop,#main .blog .TA_selfserveprop,#main .category-list .TA_selfserveprop,#main .text404 .TA_selfserveprop{display:inline-block;vertical-align:top}
+#main .item-page .TA_cdswritereviewlg,#main .blog .TA_cdswritereviewlg,#main .category-list .TA_cdswritereviewlg,#main .text404 .TA_cdswritereviewlg{margin-right:20px}
+#main .item-page .TA_selfserveprop #CDSWIDSSP,#main .blog .TA_selfserveprop #CDSWIDSSP,#main .category-list .TA_selfserveprop #CDSWIDSSP,#main .text404 .TA_selfserveprop #CDSWIDSSP{width:100% !important}
 #main .b2jcontainer{margin:30px auto !important;width:1280px !important;background:#fff url("../img/bg.jpg") repeat !important;padding:1em !important;color:#333 !important;}
 #main .b2jcontainer h2{background:#86b340}
 #main .b2jcontainer .controls{line-height:24px}
@@ -231,13 +232,9 @@ p{margin:0 0 20px}
 .ui-widget{font-size:.9em !important}
 .ui-state-default{color:#86b340 !important}
 @media only screen and (max-width:  1280px){.inner{width:auto}
-#main .item-page,#main .blog{width:auto;}
-#main .item-page .info-right .botones,#main .blog .info-right .botones{right:0}
-#main .item-page .info-right .info,#main .blog .info-right .info{padding:1em}
-#main .b2jcontainer{width:auto !important;}
-#main .b2jcontainer h2{margin:0}
-}@media only screen and (max-width:  1024px){.inner{width:auto}
-#main .item-page,#main .blog{width:auto}
+#main .item-page,#main .blog,#main .text404{width:auto;}
+#main .item-page .info-right .botones,#main .blog .info-right .botones,#main .text404 .info-right .botones{right:0}
+#main .item-page .info-right .info,#main .blog .info-right .info,#main .text404 .info-right .info{padding:1em}
 #main .b2jcontainer{width:auto !important;}
 #main .b2jcontainer h2{margin:0}
 }@media only screen and (max-width: 800px){#main-header #logo{margin-top:10px;width:203px}
@@ -273,5 +270,5 @@ p{margin:0 0 20px}
 #main-header .right-info #dialog .column1,#main-header .right-info #dialog .column2{display:block;width:100%}
 #main-header .right-info .window{margin-bottom:100px;top:15px;position:relative}
 #main-header .right-info .chosen-choices{width:230px !important}
-#main .item-page .info-right .botones article img,#main .item-page .info-right .info article img{height:190px}
+#main .item-page .info-right .info article img{height:190px}
 }
