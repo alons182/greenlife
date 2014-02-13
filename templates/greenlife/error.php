@@ -54,7 +54,12 @@ $itemid   = $app->input->getCmd('Itemid', '');
                     
                     <div id="btn_nav"><span class="icon-menu"></span>Menu</div>
                     <nav id="menu">
-                        <jdoc:include type="modules" name="menu" style="none" />
+                        <?php if (JModuleHelper::getModule('menu')) : ?>
+                        <?php
+                                        $module = JModuleHelper::getModule('menu');
+                                        echo JModuleHelper::renderModule($module);
+                                    ?>
+                        <?php endif; ?>
                     </nav>
                 </div>
                 
