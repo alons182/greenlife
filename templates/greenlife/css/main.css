@@ -95,7 +95,7 @@ a,a:visited{color:#fff;text-decoration:none}
 p{margin:0 0 20px}
 .inner{margin:0 auto;width:1280px}
 #main-header{background:url("../img/bg.jpg") repeat #fff;color:#fff;display:block;height:110px;position:relative;-webkit-box-shadow:0 5px 5px rgba(0,0,0,0.5),0 0 5px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 5px 5px rgba(0,0,0,0.5),0 0 5px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);z-index:500;}
-#main-header #logo{float:left;width:260px;}
+#main-header #logo{float:left;width:250px;}
 #main-header #logo a{display:block;}
 #main-header #logo a img{width:95%}
 #main-header .right-info{float:right;text-align:right;}
@@ -127,15 +127,17 @@ p{margin:0 0 20px}
 #main-header .right-info .window{background:url("../img/bg.jpg") repeat #fff;display:none;padding:20px;position:fixed;top:120px;z-index:9999;}
 #main-header .right-info .window .close{color:#fff;padding:6px 6px 6px 6px;position:absolute;right:10px;text-decoration:none;top:16px;-webkit-border-radius:5px;border-radius:5px}
 #main-header .right-info #btn_nav{display:none}
-#main-header .right-info #menu ul.menu li{position:relative;display:inline-block;vertical-align:top;padding:.3em 1em;border-right:1px solid #86b340;}
-#main-header .right-info #menu ul.menu li a,#main-header .right-info #menu ul.menu li span{color:#20764b;display:block;text-transform:uppercase;cursor:pointer;}
-#main-header .right-info #menu ul.menu li a:hover,#main-header .right-info #menu ul.menu li span:hover{color:#fcb811}
-#main-header .right-info #menu ul.menu li .nav-child{position:absolute;display:none;width:139px;left:-22px;top:39px;padding:21px 20px 29px 20px;list-style:none !important;zoom:1;z-index:200;background:url("../img/bg.jpg") repeat #fff;margin:0;border-top:4px solid #86b340;font-size:12px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);}
-#main-header .right-info #menu ul.menu li .nav-child li a{color:#20764b}
-#main-header .right-info #menu ul.menu li .nav-child .active a{color:#fcb811 !important}
-#main-header .right-info #menu ul.menu li .nav-child .nav-child{position:absolute;display:none;width:238px;left:105px;top:0;padding:21px 20px 29px 20px;list-style:none !important;zoom:1;z-index:200;background:#fff;margin:0;border-top:4px solid #f5c34c;font-size:12px}
-#main-header .right-info #menu ul.menu .active a{color:#fcb811}
-#main-header .right-info #menu ul.menu .last{border-right:none}
+#main-header .right-info #menu{margin-top:20px;}
+#main-header .right-info #menu ul{margin:0;padding:0;}
+#main-header .right-info #menu ul li{position:relative;display:inline-block;vertical-align:top;padding:.3em 1em;border-right:1px solid #86b340;}
+#main-header .right-info #menu ul li a,#main-header .right-info #menu ul li span{color:#20764b;display:block;text-transform:uppercase;cursor:pointer;}
+#main-header .right-info #menu ul li a:hover,#main-header .right-info #menu ul li span:hover{color:#fcb811}
+#main-header .right-info #menu ul li .nav-child{position:absolute;display:none;width:139px;left:-22px;top:39px;padding:21px 20px 29px 20px;list-style:none !important;zoom:1;z-index:200;background:url("../img/bg.jpg") repeat #fff;margin:0;border-top:4px solid #86b340;font-size:12px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);}
+#main-header .right-info #menu ul li .nav-child li a{color:#20764b}
+#main-header .right-info #menu ul li .nav-child .active a{color:#fcb811 !important}
+#main-header .right-info #menu ul li .nav-child .nav-child{position:absolute;display:none;width:238px;left:105px;top:0;padding:21px 20px 29px 20px;list-style:none !important;zoom:1;z-index:200;background:#fff;margin:0;border-top:4px solid #f5c34c;font-size:12px}
+#main-header .right-info #menu ul .active a{color:#fcb811}
+#main-header .right-info #menu ul .last{border-right:none}
 #main #tours,#main .item-page_tours_home,#main .blog-featured_tours_home{min-height:100%;overflow:hidden;display:block;position:relative;}
 #main #tours ul,#main .item-page_tours_home ul,#main .blog-featured_tours_home ul{margin:0;padding:0;list-style:none;height:100%;overflow:hidden;}
 #main #tours ul li,#main .item-page_tours_home ul li,#main .blog-featured_tours_home ul li{position:absolute;list-style-type:none;padding:0;margin:0;height:100%;width:80%;cursor:pointer;background-position:center top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;}
@@ -262,7 +264,7 @@ p{margin:0 0 20px}
 #main-header .right-info #btn-reserve{padding:.5em;font-size:16px}
 #main-header .right-info #btn_nav{position:absolute;top:75px;left:5px;padding:7px 10px 8px 8px;background:#fcb811;-webkit-background-size:12px 9px;-moz-background-size:12px 9px;background-size:12px 9px;display:block;cursor:pointer;font-size:14px;}
 #main-header .right-info #btn_nav span{margin-right:5px}
-#main-header .right-info #menu{margin-left:0;top:110px;left:0;width:100%;position:absolute;z-index:20;background:#f26522;text-align:left;display:none;}
+#main-header .right-info #menu{margin-left:0;top:90px;left:0;width:100%;position:absolute;z-index:20;background:#f26522;text-align:left;display:none;}
 #main-header .right-info #menu ul{padding:0;margin:0;}
 #main-header .right-info #menu ul li{float:none;-webkit-background-size:13px 12px;-moz-background-size:13px 12px;background-size:13px 12px;border-right:none;}
 #main-header .right-info #menu ul li a,#main-header .right-info #menu ul li span{padding:5px 5px 3px 5px;background-position:9px 9px;color:#fff}

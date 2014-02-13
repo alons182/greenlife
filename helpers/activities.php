@@ -1,5 +1,7 @@
 <?php 
 //defined('_JEXEC') or die;
+header('Content-Type: text/javascript; charset=UTF-8');
+
 define( '_JEXEC', 1 );
 define('JPATH_BASE', dirname(dirname(__FILE__)));
 define( 'DS', DIRECTORY_SEPARATOR );

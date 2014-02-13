@@ -21,6 +21,7 @@ $itemid   = $app->input->getCmd('Itemid', '');
 // Add JavaScript Frameworks
 //JHtml::_('bootstrap.framework');
 
+
 // Add Stylesheets
 $doc->addStyleSheet('templates/'.$this->template.'/css/normalize.min.css');
 $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');

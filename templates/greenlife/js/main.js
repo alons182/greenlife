@@ -151,7 +151,7 @@ jQuery(function($) {
 
   // LOAD ACTIVITIES FORM RESERVATION
   $.getJSON('/helpers/activities.php',{lang:theLanguage}, function(data) {
-
+    
       var items = [];
 
       var select = $('#Activitie').empty();
