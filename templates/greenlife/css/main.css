@@ -90,7 +90,7 @@ body{background:#f0efed;color:#333;font:normal 14px georgia,sans-serif;height:10
 .bgid-120,.bgid-133{background-image:url("../img/rioceleste.jpg")}
 .bgid-125,.bgid-138{background-image:url("../img/santarosa.jpg")}
 .bgid-101{background-image:url("../img/santarosa.jpg")}
-.btn{background:#000;padding:.5em;text-align:center;text-transform:uppercase;-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);font-size:14px;font-weight:bold;}
+.btn{background:#fcb811;padding:.5em;text-align:center;text-transform:uppercase;-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);font-size:14px;font-weight:bold;}
 .btn:hover{background:#86b340}
 a,a:visited{color:#fff;text-decoration:none}
 p{margin:0 0 20px}
@@ -132,12 +132,12 @@ p{margin:0 0 20px}
 #main-header .right-info #menu ul{margin:0;padding:0;}
 #main-header .right-info #menu ul li{position:relative;display:inline-block;vertical-align:top;padding:.3em 1em;border-right:1px solid #86b340;}
 #main-header .right-info #menu ul li a,#main-header .right-info #menu ul li span{color:#20764b;display:block;text-transform:uppercase;cursor:pointer;}
-#main-header .right-info #menu ul li a:hover,#main-header .right-info #menu ul li span:hover{color:#000}
+#main-header .right-info #menu ul li a:hover,#main-header .right-info #menu ul li span:hover{color:#fcb811}
 #main-header .right-info #menu ul li .nav-child{position:absolute;display:none;width:200px;left:-22px;top:39px;padding:21px 20px 29px 20px;list-style:none !important;zoom:1;z-index:200;background:url("../img/bg.jpg") repeat #fff;margin:0;border-top:4px solid #86b340;font-size:12px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);box-shadow:0 3px 5px rgba(0,0,0,0.5),0 0 1px rgba(0,0,0,0.5),inset 0 0 1px 1px rgba(255,255,255,0.2),inset 0 1px 0 rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.05);}
 #main-header .right-info #menu ul li .nav-child li a{color:#20764b}
-#main-header .right-info #menu ul li .nav-child .active a{color:#000 !important}
+#main-header .right-info #menu ul li .nav-child .active a{color:#fcb811 !important}
 #main-header .right-info #menu ul li .nav-child .nav-child{position:absolute;display:none;width:238px;left:105px;top:0;padding:21px 20px 29px 20px;list-style:none !important;zoom:1;z-index:200;background:#fff;margin:0;border-top:4px solid #f5c34c;font-size:12px}
-#main-header .right-info #menu ul .active a{color:#000}
+#main-header .right-info #menu ul .active a{color:#fcb811}
 #main-header .right-info #menu ul .last{border-right:none}
 #main #tours,#main .item-page_tours_home,#main .blog-featured_tours_home{min-height:100%;overflow:hidden;display:block;position:relative;}
 #main #tours ul,#main .item-page_tours_home ul,#main .blog-featured_tours_home ul{margin:0;padding:0;list-style:none;height:100%;overflow:hidden;}
@@ -172,7 +172,7 @@ p{margin:0 0 20px}
 #main .item-page .info-right .botones ul li,#main .blog .info-right .botones ul li,#main .category-list .info-right .botones ul li,#main .text404 .info-right .botones ul li{background:#ccc;cursor:pointer;height:42px;list-style:none;margin:5px 5px;position:relative;-webkit-border-radius:5px;border-radius:5px;}
 #main .item-page .info-right .botones ul li span,#main .blog .info-right .botones ul li span,#main .category-list .info-right .botones ul li span,#main .text404 .info-right .botones ul li span{color:#fff;display:block;font-size:12px;height:16px;text-align:center;width:50px}
 #main .item-page .info-right .botones ul li .icon-image,#main .blog .info-right .botones ul li .icon-image,#main .category-list .info-right .botones ul li .icon-image,#main .text404 .info-right .botones ul li .icon-image,#main .item-page .info-right .botones ul li .icon-signup,#main .blog .info-right .botones ul li .icon-signup,#main .category-list .info-right .botones ul li .icon-signup,#main .text404 .info-right .botones ul li .icon-signup,#main .item-page .info-right .botones ul li .icon-notebook,#main .blog .info-right .botones ul li .icon-notebook,#main .category-list .info-right .botones ul li .icon-notebook,#main .text404 .info-right .botones ul li .icon-notebook,#main .item-page .info-right .botones ul li .icon-coin,#main .blog .info-right .botones ul li .icon-coin,#main .category-list .info-right .botones ul li .icon-coin,#main .text404 .info-right .botones ul li .icon-coin,#main .item-page .info-right .botones ul li .icon-cart,#main .blog .info-right .botones ul li .icon-cart,#main .category-list .info-right .botones ul li .icon-cart,#main .text404 .info-right .botones ul li .icon-cart,#main .item-page .info-right .botones ul li .icon-users,#main .blog .info-right .botones ul li .icon-users,#main .category-list .info-right .botones ul li .icon-users,#main .text404 .info-right .botones ul li .icon-users{color:rgba(255,255,255,0.6);font-size:1.3em;padding-bottom:5px;padding-top:2px}
-#main .item-page .info-right .botones ul #btn-images,#main .blog .info-right .botones ul #btn-images,#main .category-list .info-right .botones ul #btn-images,#main .text404 .info-right .botones ul #btn-images{background:#000}
+#main .item-page .info-right .botones ul #btn-images,#main .blog .info-right .botones ul #btn-images,#main .category-list .info-right .botones ul #btn-images,#main .text404 .info-right .botones ul #btn-images{background:#fcb811}
 #main .item-page .info-right .botones ul #btn-details,#main .blog .info-right .botones ul #btn-details,#main .category-list .info-right .botones ul #btn-details,#main .text404 .info-right .botones ul #btn-details{background:#86b340}
 #main .item-page .info-right .botones ul #btn-rates,#main .blog .info-right .botones ul #btn-rates,#main .category-list .info-right .botones ul #btn-rates,#main .text404 .info-right .botones ul #btn-rates{background:#20764b}
 #main .item-page .info-right .botones ul #btn-book,#main .blog .info-right .botones ul #btn-book,#main .category-list .info-right .botones ul #btn-book,#main .text404 .info-right .botones ul #btn-book{background:#f26522}
@@ -259,7 +259,7 @@ p{margin:0 0 20px}
 #main-header .right-info .idiomas{margin-top:10px;margin-bottom:5px}
 #main-header .right-info #redes{margin-top:10px;margin-bottom:10px}
 #main-header .right-info #btn-reserve{padding:.5em;font-size:16px}
-#main-header .right-info #btn_nav{position:absolute;top:75px;left:5px;padding:7px 10px 8px 8px;background:#000;-webkit-background-size:12px 9px;-moz-background-size:12px 9px;background-size:12px 9px;display:block;cursor:pointer;font-size:14px;}
+#main-header .right-info #btn_nav{position:absolute;top:75px;left:5px;padding:7px 10px 8px 8px;background:#fcb811;-webkit-background-size:12px 9px;-moz-background-size:12px 9px;background-size:12px 9px;display:block;cursor:pointer;font-size:14px;}
 #main-header .right-info #btn_nav span{margin-right:5px}
 #main-header .right-info #menu{margin-left:0;top:90px;left:0;width:100%;position:absolute;z-index:20;background:#f26522;text-align:left;display:none;}
 #main-header .right-info #menu ul{padding:0;margin:0;}
