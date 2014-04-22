@@ -119,7 +119,11 @@ jQuery(function($) {
 
         $('#dialog').fadeIn(200);
 
-    }else{
+    }else if($(this).attr('data-info')=="rates")
+    {
+      console.log('desabilitado');
+    }
+    else{
        $(".info").find('article').hide();
        $(".info").find('[data-id="'+ $(this).attr('data-info') +'"]').fadeIn(500);
     }
