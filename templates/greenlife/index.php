@@ -34,7 +34,7 @@ $doc->addStyleSheet('templates/'.$this->template.'/css/main.css');
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<jdoc:include type="head" />
-     <link rel="icon" type="image/png" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/favicon_16x16.ico">
+     <link rel="icon" type="image/png" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/favicon_16x16.ico">
     
     <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/ui-lightness/jquery-ui-1.10.3.custom.min.css">
     <link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/vendor/lightbox/css/lightbox.css" rel="stylesheet">
