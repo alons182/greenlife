@@ -13,9 +13,9 @@ class JConfig {
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
 	public $host = 'localhost';
-	public $user = 'kuzanagi_alonso';
-	public $password = 'Iw6eVdVMGcaZ';
-	public $db = 'kuzanagi_greenlife';
+	public $user = 'root';
+	public $password = '1234';
+	public $db = 'greenlife';
 	public $dbprefix = 'ldma3_';
 	public $live_site = '';
 	public $secret = 'JRRTcYR279rzMEFR';
@@ -54,8 +54,8 @@ class JConfig {
 	public $sef_suffix = '1';
 	public $unicodeslugs = '1';
 	public $feed_limit = '10';
-	public $log_path = '/home4/kuzanagi/public_html/toursgreenlife.com/greenlife/logs';
-	public $tmp_path = '/home4/kuzanagi/public_html/toursgreenlife.com/greenlife/tmp';
+	public $log_path = 'C:\\xampp\\htdocs\\greenlife/logs';
+	public $tmp_path = 'C:\\xampp\\htdocs\\greenlife/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $MetaRights = '';
