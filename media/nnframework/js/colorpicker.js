@@ -2,11 +2,11 @@
  * JavaScript file for Element: ColorPicker
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -17,10 +17,8 @@
  * Licensed under the MIT license
  */
 
-(function($)
-{
-	var nnColorPicker = function(element, options)
-	{
+(function($) {
+	var nnColorPicker = function(element, options) {
 		this.select = $(element);
 		this.options = $.extend({}, $.fn.nncolorpicker.defaults, options);
 
@@ -28,8 +26,7 @@
 
 		// Build the list of colors
 		var list = '';
-		$('option', this.select).each(function()
-		{
+		$('option', this.select).each(function() {
 			var option = $(this);
 			var color = option.val();
 			if (option.text() == '-') {
@@ -72,8 +69,7 @@
 	nnColorPicker.prototype = {
 		constructor: nnColorPicker,
 
-		show: function()
-		{
+		show: function() {
 			var bootstrapArrowWidth = 16; // Empirical value
 			var pos = this.icon.offset();
 			this.panel.css({
@@ -84,13 +80,11 @@
 			this.panel.show(this.options.delay);
 		},
 
-		hide: function()
-		{
+		hide: function() {
 			this.panel.hide(this.options.delay);
 		},
 
-		click: function(e)
-		{
+		click: function(e) {
 			var target = $(e.target);
 			if (target.length === 1) {
 				if (target[0].nodeName.toLowerCase() === 'span') {
@@ -127,8 +121,7 @@
 		/**
 		 * Prevents the mousedown event from "eating" the click event.
 		 */
-		mousedown: function(e)
-		{
+		mousedown: function(e) {
 			e.stopPropagation();
 			e.preventDefault();
 		},
@@ -138,10 +131,8 @@
 		 *
 		 * See http://stackoverflow.com/questions/1740700/get-hex-value-rather-than-rgb-value-using-$
 		 */
-		rgb2hex: function(rgb)
-		{
-			function hex(x)
-			{
+		rgb2hex: function(rgb) {
+			function hex(x) {
 				return ("0" + parseInt(x, 10).toString(16)).slice(-2);
 			}
 
@@ -159,11 +150,9 @@
 	/**
 	 * Plugin definition.
 	 */
-	$.fn.nncolorpicker = function(option)
-	{
+	$.fn.nncolorpicker = function(option) {
 		// For HTML element passed to the plugin
-		return this.each(function()
-		{
+		return this.each(function() {
 			var $this = $(this),
 				data = $this.data('nncolorpicker'),
 				options = typeof option === 'object' && option;
@@ -186,8 +175,7 @@
 		delay: 0
 	};
 
-	$(document).ready(function()
-	{
+	$(document).ready(function() {
 		$('select.nncolorpicker').nncolorpicker();
 	});
 })(jQuery);

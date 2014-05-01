@@ -3,11 +3,11 @@
  * Plugin Helper File
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -93,7 +93,9 @@ class plgSystemNNFrameworkHelper
 		if (version_compare(JVERSION, '3.2', 'l'))
 		{
 			JFactory::getApplication()->render();
-		} else {
+		}
+		else
+		{
 			nnApplication::render();
 		}
 
@@ -108,7 +110,6 @@ class plgSystemNNFrameworkHelper
 	}
 }
 
-
 class nnApplication
 {
 	static function render()
@@ -118,8 +119,8 @@ class nnApplication
 		$options = array();
 		// Setup the document options.
 		$options['template'] = $app->get('theme');
-		$options['file']     = $app->get('themeFile', 'index.php');
-		$options['params']   = $app->get('themeParams');
+		$options['file'] = $app->get('themeFile', 'index.php');
+		$options['params'] = $app->get('themeParams');
 
 		if ($app->get('themes.base'))
 		{

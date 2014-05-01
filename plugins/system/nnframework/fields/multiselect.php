@@ -4,11 +4,11 @@
  * Displays a multiselectbox
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -42,6 +42,7 @@ class JFormFieldNN_MultiSelect extends JFormField
 		$size = (int) $this->get('size');
 
 		require_once JPATH_PLUGINS . '/system/nnframework/helpers/html.php';
+
 		return nnHtml::selectlist($options, $this->name, $this->value, $this->id, $size, 1);
 	}
 

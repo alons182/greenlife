@@ -4,11 +4,11 @@
  * Displays an article id field with a button
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -130,9 +130,12 @@ class JFormFieldNN_Modules extends JFormField
 		{
 			$attr = $size ? ' size="' . (int) $size . '"' : '';
 			$attr .= $multiple ? ' multiple="multiple"' : '';
+			$attr .= ' class="input-xxlarge"';
 
 			$html = JHtml::_('select.genericlist', $options, $this->name, trim($attr), 'value', 'text', $this->value, $this->id);
+			$html = '<div class="input-maximize">' . $html . '</div>';
 		}
+
 		return preg_replace('#>\[\[\:(.*?)\:\]\]#si', ' style="\1">', $html);
 	}
 

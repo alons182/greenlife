@@ -3,11 +3,11 @@
  * Plugin Helper File
  *
  * @package         Sourcerer
- * @version         4.3.1
+ * @version         4.3.3
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -59,12 +59,18 @@ class plgSystemSourcererHelper
 	/**
 	 * onContentPrepare
 	 */
-	function onContentPrepare(&$article)
+	function onContentPrepare(&$article, &$context)
 	{
 		$area = isset($article->created_by) ? 'articles' : 'other';
 
 
-		if (isset($article->text))
+		if (isset($article->text)
+			&& !(
+				$context == 'com_content.category'
+				&& JFactory::getApplication()->input->get('view') == 'category'
+				&& !JFactory::getApplication()->input->get('layout')
+			)
+		)
 		{
 			$this->replace($article->text, $area, $article);
 		}
@@ -135,9 +141,11 @@ class plgSystemSourcererHelper
 		// FEED
 		if ((JFactory::getDocument()->getType() == 'feed' || $this->option == 'com_acymailing') && isset(JFactory::getDocument()->items))
 		{
-			for ($i = 0; $i < count(JFactory::getDocument()->items); $i++)
+			$context = 'feed';
+			$items = JFactory::getDocument()->items;
+			foreach ($items as $item)
 			{
-				$this->onContentPrepare(JFactory::getDocument()->items[$i]);
+				$this->onContentPrepare($item, $context);
 			}
 		}
 
@@ -150,6 +158,10 @@ class plgSystemSourcererHelper
 				{
 					$this->tagArea($buffer['component'][''], 'SRC', 'component');
 				}
+			}
+			else if ($this->option == 'com_jmap' && JFactory::getDocument()->getType() == 'xml')
+			{
+				$this->replaceTags($buffer);
 			}
 			else
 			{

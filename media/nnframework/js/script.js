@@ -2,41 +2,35 @@
  * Main JavaScript file
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
-(function($)
-{
+(function($) {
 	if (typeof( window['nnScripts'] ) == "undefined") {
-		$(document).ready(function()
-		{
+		$(document).ready(function() {
 			// remove all empty control groups
-			$('div.control-group > div').each(function(i, el)
-			{
+			$('div.control-group > div').each(function(i, el) {
 				if ($(el).html().trim() == '') {
 					$(el).remove();
 				}
 			});
-			$('div.control-group').each(function(i, el)
-			{
+			$('div.control-group').each(function(i, el) {
 				if ($(el).html().trim() == '') {
 					$(el).remove();
 				}
 			});
-			$('div.control-group > div.hide').each(function(i, el)
-			{
+			$('div.control-group > div.hide').each(function(i, el) {
 				$(el).parent().css('margin', 0);
 			});
 		});
 
 		nnScripts = {
-			loadajax: function(url, succes, fail, query, timeout, dataType)
-			{
+			loadajax: function(url, succes, fail, query, timeout, dataType) {
 				if (url.substr(0, 9) != 'index.php') {
 					url = url.replace('http://', '');
 					url = 'index.php?nn_qp=1&url=' + escape(url);
@@ -49,14 +43,12 @@
 					type: 'post',
 					url: url,
 					dataType: dt,
-					success: function(data)
-					{
+					success: function(data) {
 						if (succes) {
 							eval(succes + ';');
 						}
 					},
-					error: function(data)
-					{
+					error: function(data) {
 						if (fail) {
 							eval(fail + ';');
 						}
@@ -64,8 +56,7 @@
 				});
 			},
 
-			displayVersion: function(data, extension, version, is_pro)
-			{
+			displayVersion: function(data, extension, version, is_pro) {
 				if (!data) {
 					return;
 				}
@@ -100,11 +91,11 @@
 				el = $('#nonumber_version_' + extension);
 				if (el) {
 					el.css('display', 'block');
+					el.parent().removeClass('hide');
 				}
 			},
 
-			toggleSelectListSelection: function(id)
-			{
+			toggleSelectListSelection: function(id) {
 				var el = document.getElement('#' + id);
 				if (el && el.options) {
 					for (var i = 0; i < el.options.length; i++) {
@@ -115,8 +106,7 @@
 				}
 			},
 
-			toggleSelectListSize: function(id)
-			{
+			toggleSelectListSize: function(id) {
 				var link = document.getElement('#toggle_' + id);
 				var el = document.getElement('#' + id);
 				if (link && el) {
@@ -138,8 +128,7 @@
 				}
 			},
 
-			in_array: function(needle, haystack, casesensitive)
-			{
+			in_array: function(needle, haystack, casesensitive) {
 				if ({}.toString.call(needle).slice(8, -1) != 'Array') {
 					needle = [needle];
 				}
@@ -163,18 +152,15 @@
 				return false;
 			},
 
-			getObjectFromXML: function(xml)
-			{
+			getObjectFromXML: function(xml) {
 				if (!xml) {
 					return;
 				}
 
 				var obj = [];
-				$(xml).find('extension').each(function()
-				{
+				$(xml).find('extension').each(function() {
 					el = [];
-					$(this).children().each(function()
-					{
+					$(this).children().each(function() {
 						el[this.nodeName.toLowerCase()] = String($(this).text()).trim();
 					});
 					if (typeof(el.alias) !== 'undefined') {
@@ -188,8 +174,7 @@
 				return obj;
 			},
 
-			compareVersions: function(num1, num2)
-			{
+			compareVersions: function(num1, num2) {
 				num1 = num1.split('.');
 				num2 = num2.split('.');
 
@@ -206,9 +191,9 @@
 					}
 
 					let1 = num1[i].replace(/^[0-9]*(.*)/, '$1');
-					num1[i] = num1[i].toInt();
+					num1[i] = parseInt(num1[i]);
 					let2 = num2[i].replace(/^[0-9]*(.*)/, '$1');
-					num2[i] = num2[i].toInt();
+					num2[i] = parseInt(num2[i]);
 
 					if (num1[i] < num2[i]) {
 						return '<';
@@ -227,17 +212,14 @@
 				}
 			},
 
-			setRadio: function(id, value)
-			{
+			setRadio: function(id, value) {
 				value = value ? 1 : 0;
-				document.getElements('input#jform_' + id + value + ',input#jform_params_' + id + value + ',input#advancedparams_' + id + value).each(function(el)
-				{
+				document.getElements('input#jform_' + id + value + ',input#jform_params_' + id + value + ',input#advancedparams_' + id + value).each(function(el) {
 					el.click();
 				});
 			},
 
-			setToggleTitleClass: function(input, value)
-			{
+			setToggleTitleClass: function(input, value) {
 				el = $(input);
 				el = el.parent().parent().parent().parent();
 
@@ -251,10 +233,8 @@
 		}
 	}
 
-	$(document).ready().delay(1000, function()
-	{
-		$('.btn-group.nn_btn-group label').click(function()
-		{
+	$(document).ready().delay(1000, function() {
+		$('.btn-group.nn_btn-group label').click(function() {
 			var label = $(this);
 			var input = $('#' + label.attr('for'));
 
@@ -270,8 +250,7 @@
 			}
 			input.prop('checked', true);
 		});
-		$('.btn-group.nn_btn-group input[checked=checked]').each(function()
-		{
+		$('.btn-group.nn_btn-group input[checked=checked]').each(function() {
 			$('label[for=' + $(this).attr('id') + ']').removeClass('active btn-success btn-danger btn-primary');
 			if ($(this).val() == '' || $(this).val() == -2) {
 				$('label[for=' + $(this).attr('id') + ']').addClass('active btn-primary');

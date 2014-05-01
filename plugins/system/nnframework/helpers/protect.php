@@ -3,11 +3,11 @@
  * NoNumber Framework Helper File: Protect
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -68,12 +68,12 @@ class NNProtect
 
 		$task = JFactory::getApplication()->input->get('task');
 		$view = JFactory::getApplication()->input->get('view');
-		if (!(strpos($task, '.') === false))
+		if (strpos($task, '.') !== false)
 		{
 			$task = explode('.', $task);
 			$task = array_pop($task);
 		}
-		if (!(strpos($view, '.') === false))
+		if (strpos($view, '.') !== false)
 		{
 			$view = explode('.', $view);
 			$view = array_pop($view);
@@ -147,7 +147,7 @@ class NNProtect
 			return;
 		}
 
-		$regex = '#</?([a-z][a-z0-9]*)(?:\s[^>]*)?>#si';
+		$regex = '#</?[a-z][^>]*>#si';
 
 		self::protectByRegex($str, $regex);
 	}
@@ -157,10 +157,15 @@ class NNProtect
 	 */
 	private static function protectByRegex(&$str, $regex)
 	{
-		while (preg_match($regex, $str, $match))
+		if (preg_match_all($regex, $str, $matches) > 0)
 		{
-			$protected = self::$protect_a . base64_encode($match['0']) . self::$protect_b;
-			$str = str_replace($match['0'], $protected, $str);
+			$matches = array_unique($matches['0']);
+
+			foreach ($matches as $match)
+			{
+				$protected = self::$protect_a . base64_encode($match) . self::$protect_b;
+				$str = str_replace($match, $protected, $str);
+			}
 		}
 	}
 
@@ -217,10 +222,15 @@ class NNProtect
 
 		$regex = '#' . preg_quote('{' . self::$sourcerer_tag, '#') . '[\s\}].*?' . preg_quote('{/' . self::$sourcerer_tag . '}', '#') . '#si';
 
-		while (preg_match($regex, $str, $match))
+		if (preg_match_all($regex, $str, $matches) > 0)
 		{
-			$protected = self::$protect_a . base64_encode($match['0']) . self::$protect_b;
-			$str = str_replace($match['0'], $protected, $str);
+			$matches = array_unique($matches['0']);
+
+			foreach ($matches as $match)
+			{
+				$protected = self::$protect_a . base64_encode($match) . self::$protect_b;
+				$str = str_replace($match, $protected, $str);
+			}
 		}
 	}
 
@@ -267,7 +277,7 @@ class NNProtect
 				$pass = 0;
 				foreach ($tags as $tag)
 				{
-					if (!(strpos($s, $tag) === false))
+					if (strpos($s, $tag) !== false)
 					{
 						$pass = 1;
 						break;
@@ -277,12 +287,14 @@ class NNProtect
 				{
 					$s = explode('</form>', $s, 2);
 					// protect tags only inside form fields
-					if (preg_match_all('#(?:<textarea[^>]*>.*?<\/textarea>|<input[^>]*>)#si', $s['0'], $matches, PREG_SET_ORDER) > 0)
+					if (preg_match_all('#(?:<textarea[^>]*>.*?<\/textarea>|<input[^>]*>)#si', $s['0'], $matches) > 0)
 					{
+						$matches = array_unique($matches['0']);
+
 						foreach ($matches as $match)
 						{
-							$field = str_replace($tags, $protected, $match['0']);
-							$s['0'] = str_replace($match['0'], $field, $s['0']);
+							$field = str_replace($tags, $protected, $match);
+							$s['0'] = str_replace($match, $field, $s['0']);
 						}
 					}
 					$str[$i] = implode('</form>', $s);
@@ -299,10 +311,12 @@ class NNProtect
 	public static function unprotect(&$str)
 	{
 		$regex = '#' . preg_quote(self::$protect_a, '#') . '(.*?)' . preg_quote(self::$protect_b, '#') . '#si';
-		while (preg_match($regex, $str, $match))
+		if (preg_match_all($regex, $str, $matches, PREG_SET_ORDER) > 0)
 		{
-			$r = base64_decode($match['1']);
-			$str = str_replace($match['0'], $r, $str);
+			foreach ($matches as $match)
+			{
+				$str = str_replace($match['0'], base64_decode($match['1']), $str);
+			}
 		}
 	}
 
@@ -364,7 +378,7 @@ class NNProtect
 		}
 		if (!is_array($htmltags))
 		{
-			$htmltags = array($attribs);
+			$htmltags = array($htmltags);
 		}
 		if (preg_match_all('#(<(' . implode('|', $htmltags) . ')(?:\s[^>]*?)>)(.*?)(</\2>)#si', $str, $matches, PREG_SET_ORDER) > 0)
 		{
@@ -393,16 +407,18 @@ class NNProtect
 		{
 			$attribs = array($attribs);
 		}
-		if (preg_match_all('#\s(?:' . implode('|', $attribs) . ')\s*=\s*".*?"#si', $str, $matches, PREG_SET_ORDER) > 0)
+		if (preg_match_all('#\s(?:' . implode('|', $attribs) . ')\s*=\s*".*?"#si', $str, $matches) > 0)
 		{
+			$matches = array_unique($matches['0']);
+
 			foreach ($matches as $match)
 			{
-				$title = $match['0'];
+				$title = $match;
 				foreach ($tags as $tag)
 				{
 					$title = preg_replace('#\{/?' . $tag . '.*?\}#si', '', $title);
 				}
-				$str = str_replace($match['0'], $title, $str);
+				$str = str_replace($match, $title, $str);
 			}
 		}
 	}

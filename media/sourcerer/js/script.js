@@ -2,38 +2,32 @@
  * Javascript file
  *
  * @package         Sourcerer
- * @version         4.3.1
+ * @version         4.3.3
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
-(function($)
-{
+(function($) {
 	var $editor = null;
 
-	sourcerer_init = function()
-	{
+	sourcerer_init = function() {
 		$editor = Joomla.editors.instances['source'];
 
-		try
-		{
+		try {
 			var string = $editor.getValue();
 		}
-		catch (err)
-		{
+		catch (err) {
 			setTimeout("sourcerer_init();", 100);
 			return;
 		}
 
 		var editor_textarea = window.parent.document.getElementById(sourcerer_editorname);
-		if (editor_textarea)
-		{
+		if (editor_textarea) {
 			var iframes = editor_textarea.parentNode.getElementsByTagName('iframe');
-			if (!iframes.length)
-			{
+			if (!iframes.length) {
 				return;
 			}
 
@@ -41,30 +35,23 @@
 			var contentWindow = editor_frame.contentWindow;
 			var selection = '';
 
-			if (typeof contentWindow.getSelection != "undefined")
-			{
+			if (typeof contentWindow.getSelection != "undefined") {
 				var sel = contentWindow.getSelection();
-				if (sel.rangeCount)
-				{
+				if (sel.rangeCount) {
 					var container = contentWindow.document.createElement("div");
-					for (i = 0, len = sel.rangeCount; i < len; ++i)
-					{
+					for (i = 0, len = sel.rangeCount; i < len; ++i) {
 						container.appendChild(sel.getRangeAt(i).cloneContents());
 					}
 					selection = container.innerHTML;
 				}
-			}
-			else if (typeof contentWindow.document.selection != "undefined")
-			{
-				if (contentWindow.document.selection.type == "Text")
-				{
+			} else if (typeof contentWindow.document.selection != "undefined") {
+				if (contentWindow.document.selection.type == "Text") {
 					selection = contentWindow.document.selection.createRange().htmlText;
 				}
 			}
 			selection = sourcerer_cleanRange(selection);
 
-			if (selection != '')
-			{
+			if (selection != '') {
 				$editor.setValue(selection);
 			}
 		}
@@ -76,24 +63,20 @@
 		$editor.setValue(string);
 
 		var icon = $('span.icon-src-sourcetags');
-		if (string.search('{' + sourcerer_syntax_word) != -1)
-		{
+		if (string.search('{' + sourcerer_syntax_word) != -1) {
 			icon.addClass('icon-src-nosourcetags');
 		}
-		if (sourcerer_default_addsourcetags)
-		{
+		if (sourcerer_default_addsourcetags) {
 			sourcerer_toggleSourceTags(1);
 		}
 
 		icon = $('span.icon-src-tagstyle');
-		if (string.search(/\[\[/g) != -1 && string.search(/\]\]/g) != -1)
-		{
+		if (string.search(/\[\[/g) != -1 && string.search(/\]\]/g) != -1) {
 			icon.addClass('icon-src-tagstylebrackets');
 		}
 	};
 
-	sourcerer_insertText = function()
-	{
+	sourcerer_insertText = function() {
 		var string = $editor.getValue();
 
 		// convert to html entities
@@ -110,8 +93,7 @@
 		window.parent.jInsertEditorText(string, sourcerer_editorname);
 	};
 
-	sourcerer_toggleSourceTags = function(add)
-	{
+	sourcerer_toggleSourceTags = function(add) {
 		var icon = $('span.icon-src-sourcetags');
 		var string = $editor.getValue();
 
@@ -120,12 +102,9 @@
 		regex = new RegExp('\\s*' + preg_quote('{/' + sourcerer_syntax_word + '}'), 'gim');
 		string = string.replace(regex, '');
 
-		if (!add && !icon.hasClass('icon-src-nosourcetags'))
-		{
+		if (!add && !icon.hasClass('icon-src-nosourcetags')) {
 			icon.addClass('icon-src-nosourcetags');
-		}
-		else
-		{
+		} else {
 			string = '{' + sourcerer_syntax_word + '}\n' + string + '\n' + '{/' + sourcerer_syntax_word + '}';
 			icon.removeClass('icon-src-nosourcetags');
 		}
@@ -133,39 +112,33 @@
 		$editor.setValue(string);
 	};
 
-	sourcerer_toggleTagStyle = function()
-	{
+	sourcerer_toggleTagStyle = function() {
 		var icon = $('span.icon-src-tagstyle');
 		var string = $editor.getValue();
 
 		string = string.replace(/\[\[/g, '<');
 		string = string.replace(/\]\]/g, '>');
 
-		if (!icon.hasClass('icon-src-tagstylebrackets'))
-		{
+		if (!icon.hasClass('icon-src-tagstylebrackets')) {
 			string = string.replace(/<(\/?\w+((\s+\w+(\s*=\s*(?:"[\s\S.]*?"|'[\s\S.]*?'|[^'">\s]+))?)+\s*|\s*)\/?(--)?)>/gm, '[[$1]]');
 			string = string.replace(/<(!--[\s\S.]*?--)>/gm, '[[$1]]');
 			string = string.replace(/<\?(?:php)?([^a-z0-9])/gim, '[[?php$1');
 			string = string.replace(/( *)\?>/g, '$1?]]');
 			icon.addClass('icon-src-tagstylebrackets');
-		}
-		else
-		{
+		} else {
 			icon.removeClass('icon-src-tagstylebrackets');
 		}
 
 		$editor.setValue(string);
 	};
 
-	sourcerer_trim = function(string)
-	{
+	sourcerer_trim = function(string) {
 		string = string.replace(/^\s+/g, '');
 		string = string.replace(/\s+$/g, '');
 		return string.trim();
 	};
 
-	sourcerer_cleanRange = function(string)
-	{
+	sourcerer_cleanRange = function(string) {
 		var regex = new RegExp('[\n\r]', 'gim');
 		string = string.replace(regex, '');
 		regex = new RegExp('(</p><p>|<p>|</p>|<br>|<br />)', 'gim');
@@ -186,17 +159,14 @@
 		return string;
 	};
 
-	htmlentities = function(string, quote_style)
-	{
+	htmlentities = function(string, quote_style) {
 		tmp_str = string.toString();
 
-		if (false === ( histogram = get_html_translation_table('HTML_ENTITIES', quote_style) ))
-		{
+		if (false === ( histogram = get_html_translation_table('HTML_ENTITIES', quote_style) )) {
 			return false;
 		}
 
-		for (symbol in histogram)
-		{
+		for (symbol in histogram) {
 			entity = histogram[symbol];
 			tmp_str = tmp_str.split(symbol).join(entity);
 		}
@@ -204,8 +174,7 @@
 		return tmp_str;
 	};
 
-	get_html_translation_table = function(table, quote_style)
-	{
+	get_html_translation_table = function(table, quote_style) {
 		var entities = {}, histogram = {}, decimal = 0, symbol = '';
 		var constMappingTable = {}, constMappingQuoteStyle = {};
 		var useTable = {}, useQuoteStyle = {};
@@ -220,27 +189,23 @@
 		useTable = !isNaN(table) ? constMappingTable[table] : table ? table.toUpperCase() : 'HTML_SPECIALCHARS';
 		useQuoteStyle = !isNaN(quote_style) ? constMappingQuoteStyle[quote_style] : quote_style ? quote_style.toUpperCase() : 'ENT_COMPAT';
 
-		if (useTable !== 'HTML_SPECIALCHARS' && useTable !== 'HTML_ENTITIES')
-		{
+		if (useTable !== 'HTML_SPECIALCHARS' && useTable !== 'HTML_ENTITIES') {
 			throw Error('Table: ' + useTable + ' not supported');
 			// return false;
 		}
 
 		// ascii decimals for better compatibility
 		entities['38'] = '&amp;';
-		if (useQuoteStyle !== 'ENT_NOQUOTES')
-		{
+		if (useQuoteStyle !== 'ENT_NOQUOTES') {
 			entities['34'] = '&quot;';
 		}
-		if (useQuoteStyle === 'ENT_QUOTES')
-		{
+		if (useQuoteStyle === 'ENT_QUOTES') {
 			entities['39'] = '&#039;';
 		}
 		entities['60'] = '&lt;';
 		entities['62'] = '&gt;';
 
-		if (useTable === 'HTML_ENTITIES')
-		{
+		if (useTable === 'HTML_ENTITIES') {
 			entities['160'] = '&nbsp;';
 			entities['161'] = '&iexcl;';
 			entities['162'] = '&cent;';
@@ -340,8 +305,7 @@
 		}
 
 		// ascii decimals to real symbols
-		for (decimal in entities)
-		{
+		for (decimal in entities) {
 			symbol = String.fromCharCode(decimal);
 			histogram[symbol] = entities[decimal];
 		}
@@ -349,8 +313,7 @@
 		return histogram;
 	};
 
-	preg_quote = function(str)
-	{
+	preg_quote = function(str) {
 		return (str + '').replace(/([\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!<>\|\:])/g, '\$1');
 	};
 

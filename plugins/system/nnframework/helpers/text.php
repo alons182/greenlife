@@ -3,11 +3,11 @@
  * NoNumber Framework Helper File: Text
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -53,6 +53,7 @@ class NNText
 			// Full Date / Time
 			'%s' => 'U'
 		);
+
 		return strtr((string) $dateFormat, $caracs);
 	}
 
@@ -92,6 +93,7 @@ class NNText
 			// Full Date / Time - no strf eq : c, r; no date eq : %c, %D, %F, %x
 			'U' => '%s'
 		);
+
 		return strtr((string) $dateFormat, $caracs);
 	}
 
@@ -103,8 +105,10 @@ class NNText
 			{
 				$given_html[$i] = self::html_entity_decoder($html);
 			}
+
 			return $given_html;
 		}
+
 		return html_entity_decode($given_html, $quote_style, $charset);
 	}
 
@@ -112,6 +116,9 @@ class NNText
 	{
 		// remove comment tags
 		$str = preg_replace('#<\!--.*?-->#s', '', $str);
+
+		// replace weird whitespace
+		$str = str_replace(chr(194) . chr(160), ' ', $str);
 
 		if ($striptags)
 		{
@@ -159,11 +166,12 @@ class NNText
 	public static function strReplaceOnce($s, $r, $str)
 	{
 		$r = str_replace(array('\\', '$'), array('\\\\', '\\$'), $r);
+
 		return preg_replace('#' . preg_quote($s, '#') . '#', $r, $str, 1);
 	}
 
 	/**
-	 * Gets the full uri and optionaly adds/replaces the hash
+	 * Gets the full uri and optionally adds/replaces the hash
 	 */
 	public static function getURI($hash = '')
 	{
@@ -188,6 +196,7 @@ class NNText
 		{
 			return $match['1'];
 		}
+
 		return '';
 	}
 
@@ -208,7 +217,7 @@ class NNText
 		$str = str_replace('-', ' ', $str);
 
 		// Replace forbidden characters by whitespaces
-		$str = preg_replace('#[,:\#\*"@+=;!&\.%()\]\/\'\\\\|\[]#', "\x20", $str);
+		$str = preg_replace('#[,:\#\$\*"@+=;!&\.%()\]\/\'\\\\|\[]#', "\x20", $str);
 
 		// Delete all '?'
 		$str = str_replace('?', '', $str);
@@ -219,7 +228,10 @@ class NNText
 		// Remove any duplicate whitespace and replace whitespaces by hyphens
 		$str = preg_replace('#\x20+#', '-', $str);
 
-		return $str;
+		// Remove leading and trailing hyphens
+		$str = trim($str, '-');
+
+		return JString::strtolower($str);
 	}
 
 	/**

@@ -4,11 +4,11 @@
  * Display a menuitem field with a button
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -60,6 +60,7 @@ class JFormFieldNN_MenuItems extends JFormField
 		catch (RuntimeException $e)
 		{
 			JError::raiseWarning(500, $e->getMessage());
+
 			return false;
 		}
 
@@ -78,6 +79,7 @@ class JFormFieldNN_MenuItems extends JFormField
 		catch (RuntimeException $e)
 		{
 			JError::raiseWarning(500, $e->getMessage());
+
 			return false;
 		}
 
@@ -91,7 +93,7 @@ class JFormFieldNN_MenuItems extends JFormField
 			$type->class = 'hidechildren';
 			$type->labelclass = 'nav-header';
 
-			$rlu[$type->menutype] = &$type;
+			$rlu[$type->menutype] = & $type;
 			$type->links = array();
 		}
 
@@ -110,7 +112,7 @@ class JFormFieldNN_MenuItems extends JFormField
 					$link->text .= ' (' . $link->language . ')';
 				}
 
-				$rlu[$link->menutype]->links[] = &$link;
+				$rlu[$link->menutype]->links[] = & $link;
 
 				// Cleanup garbage.
 				unset($link->menutype);

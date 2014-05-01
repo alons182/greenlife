@@ -4,11 +4,11 @@
  * Loads the English language file as fallback
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -40,14 +40,7 @@ class JFormFieldNN_LoadLanguage extends JFormField
 	{
 		if ($extension)
 		{
-			$path = $admin ? JPATH_ADMINISTRATOR : JPATH_SITE;
-			$lang = JFactory::getLanguage();
-			if ($lang->getTag() != 'en-GB')
-			{
-				// Loads English language file as fallback (for undefined stuff in other language file)
-				$lang->load($extension, $path, 'en-GB');
-			}
-			$lang->load($extension, $path, null, 1);
+			JFactory::getLanguage()->load($extension, $admin ? JPATH_ADMINISTRATOR : JPATH_SITE);
 		}
 	}
 

@@ -3,11 +3,11 @@
  * NoNumber Framework Helper File: Functions
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -16,10 +16,9 @@ defined('_JEXEC') or die;
 /**
  * Framework Functions
  */
-
 class NNFrameworkFunctions
 {
-	var $_version = '13.12.7';
+	var $_version = '14.4.5';
 
 	public function getByUrl($url, $options = array())
 	{
@@ -125,6 +124,7 @@ class NNFrameworkFunctions
 			$html = $this->curl_redir_exec($ch);
 		}
 		curl_close($ch);
+
 		return $html;
 	}
 
@@ -136,6 +136,7 @@ class NNFrameworkFunctions
 		if ($curl_loops++ >= $curl_max_loops)
 		{
 			$curl_loops = 0;
+
 			return false;
 		}
 
@@ -154,6 +155,7 @@ class NNFrameworkFunctions
 			{
 				//couldn't process the url to redirect to
 				$curl_loops = 0;
+
 				return $data;
 			}
 			$last_url = parse_url(curl_getinfo($ch, CURLINFO_EFFECTIVE_URL));
@@ -171,11 +173,13 @@ class NNFrameworkFunctions
 			}
 			$new_url = $url['scheme'] . '://' . $url['host'] . $url['path'] . ($url['query'] ? '?' . $url['query'] : '');
 			curl_setopt($ch, CURLOPT_URL, $new_url);
+
 			return $this->curl_redir_exec($ch);
 		}
 		else
 		{
 			$curl_loops = 0;
+
 			return $data;
 		}
 	}
@@ -190,6 +194,18 @@ class NNFrameworkFunctions
 					|| JFile::exists(JPATH_SITE . '/components/com_' . $extension . '/' . $extension . '.php')
 				)
 				{
+					if ($extension == 'cookieconfirm')
+					{
+						// Only Cookie Confirm 2.0.0.rc1 and above is supported, because
+						// previous versions don't have isCookiesAllowed()
+						require_once JPATH_ADMINISTRATOR . '/components/com_cookieconfirm/version.php';
+
+						if (version_compare(COOKIECONFIRM_VERSION, '2.2.0.rc1', '<'))
+						{
+							return 0;
+						}
+					}
+
 					return 1;
 				}
 				break;
@@ -215,12 +231,14 @@ class NNFrameworkFunctions
 
 	static function xmlToObject($url, $root)
 	{
-		if (!JFile::exists($url))
+		if (JFile::exists($url))
 		{
-			return new stdClass;
+			$xml = @new SimpleXMLElement($url, LIBXML_NONET | LIBXML_NOCDATA, 1);
 		}
-
-		$xml = @new SimpleXMLElement($url, LIBXML_NONET, 1);
+		else
+		{
+			$xml = simplexml_load_string($url, "SimpleXMLElement", LIBXML_NONET | LIBXML_NOCDATA);
+		}
 
 		if (!@count($xml))
 		{
@@ -236,41 +254,127 @@ class NNFrameworkFunctions
 			$xml = $xml->$root;
 		}
 
-		return self::convertXmlElement($xml);
+		$xml = self::xmlToArray($xml);
+
+		if ($root && isset($xml->$root))
+		{
+			$xml = $xml->$root;
+		}
+
+		return $xml;
 	}
 
-	static function convertXmlElement($el)
+	static function xmlToArray($xml, $options = array())
 	{
-		switch (gettype($el))
-		{
-			case 'object':
-				if (empty($el))
-				{
-					return '';
-				}
-				$el = (object) (array) $el;
-				break;
-			case 'array':
-				break;
-			default:
-				return $el;
-		}
+		$defaults = array(
+			'namespaceSeparator' => ':', //you may want this to be something other than a colon
+			'attributePrefix' => '', //to distinguish between attributes and nodes with the same name
+			'alwaysArray' => array(), //array of xml tag names which should always become arrays
+			'autoArray' => true, //only create arrays for tags which appear more than once
+			'textContent' => 'value', //key used for the text content of elements
+			'autoText' => true, //skip textContent key if node has no attributes or child nodes
+			'keySearch' => false, //optional search and replace on tag and attribute names
+			'keyReplace' => false //replace values for above search values (as passed to str_replace())
+		);
+		$options = array_merge($defaults, $options);
+		$namespaces = $xml->getDocNamespaces();
+		$namespaces[''] = null; //add base (empty) namespace
 
-		$obj = array();
-		foreach ($el as $key => $val)
+		//get attributes from all namespaces
+		$attributesArray = array();
+		foreach ($namespaces as $prefix => $namespace)
 		{
-			if ('comment' == (string) $key)
+			foreach ($xml->attributes($namespace) as $attributeName => $attribute)
 			{
-				continue;
+				//replace characters in attribute name
+				if ($options['keySearch'])
+				{
+					$attributeName = str_replace($options['keySearch'], $options['keyReplace'], $attributeName);
+				}
+				$attributeKey = $options['attributePrefix']
+					. ($prefix ? $prefix . $options['namespaceSeparator'] : '')
+					. $attributeName;
+				$attributesArray[$attributeKey] = (string) $attribute;
 			}
-			$obj[$key] = self::convertXmlElement($val);
 		}
 
-		if ('object' == gettype($el))
+		//get child nodes from all namespaces
+		$tagsArray = array();
+		foreach ($namespaces as $prefix => $namespace)
 		{
-			$obj = (object) $obj;
+			foreach ($xml->children($namespace) as $childXml)
+			{
+				//recurse into child nodes
+				$childArray = self::xmlToArray($childXml, $options);
+				list($childTagName, $childProperties) = each($childArray);
+
+				//replace characters in tag name
+				if ($options['keySearch'])
+				{
+					$childTagName =
+						str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
+				}
+				//add namespace prefix, if any
+				if ($prefix)
+				{
+					$childTagName = $prefix . $options['namespaceSeparator'] . $childTagName;
+				}
+
+				if (!isset($tagsArray[$childTagName]))
+				{
+					//only entry with this key
+					//test if tags of this type should always be arrays, no matter the element count
+					$tagsArray[$childTagName] =
+						in_array($childTagName, $options['alwaysArray']) || !$options['autoArray']
+							? array($childProperties) : $childProperties;
+				}
+				elseif (
+					is_array($tagsArray[$childTagName])
+					&& array_keys($tagsArray[$childTagName]) === range(0, count($tagsArray[$childTagName]) - 1)
+				)
+				{
+					//key already exists and is integer indexed array
+					$tagsArray[$childTagName][] = $childProperties;
+				}
+				else
+				{
+					//key exists so convert to integer indexed array with previous value in position 0
+					$tagsArray[$childTagName] = array($tagsArray[$childTagName], $childProperties);
+				}
+			}
 		}
 
-		return $obj;
+		//get text content of node
+		$textContentArray = array();
+		$plainText = trim((string) $xml);
+		if ($plainText !== '')
+		{
+			$textContentArray[$options['textContent']] = $plainText;
+		}
+
+		//stick it all together
+		$propertiesArray = !$options['autoText'] || $attributesArray || $tagsArray || ($plainText === '')
+			? array_merge($attributesArray, $tagsArray, $textContentArray) : $plainText;
+
+		if (is_array($propertiesArray) && isset($propertiesArray['name']) && isset($propertiesArray['value']))
+		{
+			return array(
+				$propertiesArray['name'] => $propertiesArray['value']
+			);
+		}
+
+		if (empty($propertiesArray))
+		{
+			$propertiesArray = '';
+		}
+		else if (is_array($propertiesArray))
+		{
+			$propertiesArray = (object) $propertiesArray;
+		}
+
+		//return node as array
+		return (object) array(
+			$xml->getName() => $propertiesArray
+		);
 	}
 }

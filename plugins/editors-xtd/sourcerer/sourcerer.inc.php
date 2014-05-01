@@ -4,11 +4,11 @@
  * Displays the Sourcerer Code Helper
  *
  * @package         Sourcerer
- * @version         4.3.1
+ * @version         4.3.3
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -48,12 +48,7 @@ class plgButtonSourcererPopup
 
 		// Load plugin language
 		$lang = JFactory::getLanguage();
-		if ($lang->getTag() != 'en-GB')
-		{
-			// Loads English language file as fallback (for undefined stuff in other language file)
-			$lang->load('plg_editors-xtd_sourcerer', JPATH_ADMINISTRATOR, 'en-GB');
-			$lang->load('plg_system_sourcerer', JPATH_ADMINISTRATOR, 'en-GB');
-		}
+		$lang->load('plg_system_nnframework', JPATH_ADMINISTRATOR);
 		$lang->load('plg_editors-xtd_sourcerer', JPATH_ADMINISTRATOR);
 		$lang->load('plg_system_sourcerer', JPATH_ADMINISTRATOR);
 

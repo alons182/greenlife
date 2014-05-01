@@ -3,11 +3,11 @@
  * NoNumber Framework Helper File: Parameters
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -94,6 +94,7 @@ class NNFrameworkParameters
 		{
 			$params = JComponentHelper::getParams($name);
 		}
+
 		return $this->getParams($params, JPATH_ADMINISTRATOR . '/components/' . $name . '/config.xml');
 	}
 
@@ -116,6 +117,7 @@ class NNFrameworkParameters
 			$plugin = JPluginHelper::getPlugin($type, $name);
 			$params = (is_object($plugin) && isset($plugin->params)) ? $plugin->params : null;
 		}
+
 		return $this->getParams($params, JPATH_PLUGINS . '/' . $type . '/' . $name . '/' . $name . '.xml');
 	}
 
@@ -207,6 +209,7 @@ class NNFrameworkParameters
 			}
 			$class->$key = $val;
 		}
+
 		return $class;
 	}
 
@@ -220,6 +223,7 @@ class NNFrameworkParameters
 		{
 			$key = $xml->_name;
 		}
+
 		return $key;
 	}
 
@@ -255,6 +259,7 @@ class NNFrameworkParameters
 				}
 			}
 		}
+
 		return $val;
 	}
 }

@@ -3,26 +3,23 @@
  * Adds slide in and out functionality to elements based on an elements value
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
-(function($)
-{
+(function($) {
 	if (typeof( window['nnToggler'] ) == "undefined") {
 
-		$(document).ready(function()
-		{
+		$(document).ready(function() {
 			if ($('.nntoggler').length) {
 				nnToggler.initialize();
 			} else {
 				// Try again 2 seconds later, because IE sometimes can't see object immediately
-				$(function()
-				{
+				$(function() {
 					if ($('.nntoggler').length) {
 						nnToggler.initialize();
 					}
@@ -34,8 +31,7 @@
 			togglers: {}, // holds all the toggle areas
 			elements: {}, // holds all the elements and their values that affect toggle areas
 
-			initialize: function()
-			{
+			initialize: function() {
 				this.togglers = $('.nntoggler');
 				if (!this.togglers.length) {
 					return;
@@ -44,14 +40,12 @@
 				this.initTogglers();
 			},
 
-			initTogglers: function()
-			{
+			initTogglers: function() {
 				var self = this;
 
 				var new_togglers = {};
 
-				$.each(this.togglers, function(i, toggler)
-				{
+				$.each(this.togglers, function(i, toggler) {
 					// init togglers
 					if (toggler.id) {
 						$(toggler).show();
@@ -93,34 +87,30 @@
 				this.setElements();
 
 				// hide togglers that should be
-				$.each(this.togglers, function(i, toggler)
-				{
+				$.each(this.togglers, function(i, toggler) {
 					self.toggleByID(toggler.id, 1);
 				});
 
 				$(document.body).delay(250).css('cursor', '');
 			},
 
-			autoHeightDivs: function()
-			{
+			autoHeightDivs: function() {
 				// set all divs in the form to auto height
-				$.each($('div.col div, div.fltrt div'), function(i, el)
-				{
+				$.each($('div.col div, div.fltrt div'), function(i, el) {
 					if (el.getStyle('height') != '0px'
 						&& !el.hasClass('input')
 						&& !el.hasClass('nn_hr')
-						// GK elements
+							// GK elements
 						&& el.id.indexOf('gk_') === -1
 						&& el.className.indexOf('gk_') === -1
 						&& el.className.indexOf('switcher-') === -1
-						) {
+					) {
 						el.css('height', 'auto');
 					}
 				});
 			},
 
-			toggle: function(el_name)
-			{
+			toggle: function(el_name) {
 				this.setValues(el_name);
 				for (var i = 0; i < this.elements[el_name].togglers.length; i++) {
 					this.toggleByID(this.elements[el_name].togglers[i]);
@@ -128,8 +118,7 @@
 				//this.autoHeightDivs();
 			},
 
-			toggleByID: function(id, nofx)
-			{
+			toggleByID: function(id, nofx) {
 				if (typeof( this.togglers[id] ) == "undefined") {
 					return;
 				}
@@ -153,8 +142,7 @@
 				}
 			},
 
-			isShow: function(toggler)
-			{
+			isShow: function(toggler) {
 				var show = ( toggler.method == 'and' );
 				for (el_name in toggler.elements) {
 					var vals = toggler.elements[el_name];
@@ -175,14 +163,12 @@
 				return show;
 			},
 
-			setValues: function(el_name)
-			{
+			setValues: function(el_name) {
 				var els = this.elements[el_name].elements;
 
 				var values = [];
 				// get value
-				$.each(els, function(i, el)
-				{
+				$.each(els, function(i, el) {
 					switch (el.type) {
 						case 'radio':
 						case 'checkbox':
@@ -206,11 +192,9 @@
 				this.elements[el_name].values = values;
 			},
 
-			setElements: function()
-			{
+			setElements: function() {
 				var self = this;
-				$.each($('input, select'), function(i, el)
-				{
+				$.each($('input, select'), function(i, el) {
 					el_name = el.name.replace('@', '_').replace('[]', '').replace(/(?:jform\[params\]|jform|params|advancedparams)\[(.*?)\]/g, '\$1').trim();
 					if (el_name !== '') {
 						if (typeof( self.elements[el_name]) != "undefined") {
@@ -222,8 +206,7 @@
 				});
 			},
 
-			setElementEvents: function(el, el_name)
-			{
+			setElementEvents: function(el, el_name) {
 				var self = this;
 				var type;
 				if (typeof( el.type ) == "undefined") {

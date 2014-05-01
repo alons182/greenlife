@@ -4,11 +4,11 @@
  * Does all the magic!
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -17,13 +17,7 @@ defined('_JEXEC') or die;
 if (JFactory::getApplication()->isAdmin())
 {
 	// load the NoNumber Framework language file
-	$lang = JFactory::getLanguage();
-	if ($lang->getTag() != 'en-GB')
-	{
-		// Loads English language file as fallback (for undefined stuff in other language file)
-		$lang->load('plg_system_nnframework', JPATH_ADMINISTRATOR, 'en-GB');
-	}
-	$lang->load('plg_system_nnframework', JPATH_ADMINISTRATOR, null, 1);
+	JFactory::getLanguage()->load('plg_system_nnframework', JPATH_ADMINISTRATOR);
 }
 
 if (JFactory::getApplication()->isSite() && JFactory::getApplication()->input->get('option') == 'com_search')

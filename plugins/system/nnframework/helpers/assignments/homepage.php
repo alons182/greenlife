@@ -3,11 +3,11 @@
  * NoNumber Framework Helper File: Assignments: HomePage
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -43,7 +43,10 @@ class NNFrameworkAssignmentsHomePage
 			foreach ($home->query as $k => $v)
 			{
 				if ((isset($parent->params->{$k}) && $parent->params->{$k} != $v)
-					|| (!isset($parent->params->{$k}) && JFactory::getApplication()->input->get($k) != $v)
+					|| (
+						(!isset($parent->params->{$k}) || in_array($v, array('virtuemart', 'mijoshop')))
+						&& JFactory::getApplication()->input->get($k) != $v
+					)
 				)
 				{
 					return $parent->pass(0, $assignment);

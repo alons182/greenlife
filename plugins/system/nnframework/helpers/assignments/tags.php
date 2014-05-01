@@ -3,11 +3,11 @@
  * NoNumber Framework Helper File: Assignments: Tags
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -38,7 +38,8 @@ class NNFrameworkAssignmentsTags
 		{
 			$prefix = 'com_content.category';
 		}
-		else {
+		else
+		{
 			return $parent->pass(0, $assignment);
 		}
 
@@ -54,7 +55,6 @@ class NNFrameworkAssignmentsTags
 			);
 		$parent->db->setQuery($parent->q);
 		$tags = $parent->db->loadColumn();
-
 
 		if (empty($tags))
 		{

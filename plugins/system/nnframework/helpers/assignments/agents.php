@@ -3,11 +3,11 @@
  * NoNumber Framework Helper File: Assignments: Agents
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -32,11 +32,11 @@ class NNFrameworkAssignmentsAgents
 			jimport('joomla.environment.browser');
 			$browser = JBrowser::getInstance();
 			$a = $browser->getAgentString();
-			if (!(stripos($a, 'Chrome') === false))
+			if (stripos($a, 'Chrome') !== false)
 			{
 				$a = preg_replace('#(Chrome/.*)Safari/[0-9\.]*#is', '\1', $a);
 			}
-			else if (!(stripos($a, 'Opera') === false))
+			else if (stripos($a, 'Opera') !== false)
 			{
 				$a = preg_replace('#(Opera/.*)Version/#is', '\1Opera/', $a);
 			}
@@ -114,7 +114,7 @@ class NNFrameworkAssignmentsAgents
 			'maemo',
 			'midp',
 			'mmp',
-			'mobile.+firefox',
+			'mobile(.+firefox| safari)',
 			'netfront',
 			'opera m(ob|in)i',
 			'palm( os)?',

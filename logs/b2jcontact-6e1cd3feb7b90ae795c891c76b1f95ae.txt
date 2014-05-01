@@ -14,3 +14,35 @@ Green Life Tours - http://localhost/greenlife/contactenos.html
 Client: ::1 - Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36
 
 2013-11-22 17:30:17 Email sent.
+2014-03-17 19:24:16 ---------------------------------------------------
+*Name*
+Michela Edwards
+
+*Email*
+eiphlurt@gmail.com
+
+*Comments*
+can you send me information on tours and pricing.
+
+
+
+Green Life Tours - http://www.toursgreenlife.com/en/contact-us.html
+Client: 38.98.3.138 - Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36
+
+2014-03-17 19:24:16 Email sent.
+2014-04-21 17:53:30 ---------------------------------------------------
+*Nombre*
+alonso avotz
+
+*Email*
+alons182@hotmail.com
+
+*Comentarios*
+test de contactenos
+
+
+
+Green Life Tours - http://toursgreenlife.com/es/contactenos.html
+Client: 201.203.131.50 - Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+2014-04-21 17:53:30 Email sent.

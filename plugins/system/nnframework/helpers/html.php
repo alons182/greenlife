@@ -4,11 +4,11 @@
  * extra JHTML functions
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -66,6 +66,7 @@ class nnHtml
 			{
 				$input = '<input type="text" name="' . $name . '" id="' . $id . '" value="' . $value . '" size="60" />';
 			}
+
 			return '<fieldset class="radio"><label for="' . $id . '">' . JText::_('NN_ITEM_IDS') . ':</label>' . $input . '</fieldset>';
 		}
 
@@ -73,7 +74,9 @@ class nnHtml
 
 		if (!$multiple)
 		{
-			return JHtml::_('select.genericlist', $options, $name, 'class="inputbox"', 'value', 'text', $value);
+			$html = JHtml::_('select.genericlist', $options, $name, 'class="inputbox"', 'value', 'text', $value);
+
+			return preg_replace('#>\[\[\:(.*?)\:\]\]#si', ' style="\1">', $html);
 		}
 
 		JHtml::stylesheet('nnframework/multiselect.min.css', false, true);
@@ -136,6 +139,9 @@ class nnHtml
 		{
 			if ($prevlevel < $option->level)
 			{
+				// correct wrong level indentations
+				$option->level = $prevlevel + 1;
+
 				$html[] = '<ul class="nn_multiselect-sub">';
 			}
 			else if ($prevlevel > $option->level)
@@ -172,9 +178,9 @@ class nnHtml
 			$item .= '</div>';
 			$html[] = $item;
 
-			if (!isset($o[$i + 1]))
+			if (!isset($o[$i + 1]) && $option->level > 0)
 			{
-				$html[] = str_repeat('</li></ul>', $option->level);
+				$html[] = str_repeat('</li></ul>', (int) $option->level);
 			}
 			$prevlevel = $option->level;
 		}

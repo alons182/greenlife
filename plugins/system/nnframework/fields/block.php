@@ -4,11 +4,11 @@
  * Displays a block with optionally a title and description
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -44,7 +44,7 @@ class JFormFieldNN_Block extends JFormField
 		if ($start || !$end)
 		{
 			$html[] = '</div>';
-			if (!(strpos($class, 'alert') === false))
+			if (strpos($class, 'alert') !== false)
 			{
 				$html[] = '<div class="alert ' . $class . '">';
 			}

@@ -4,11 +4,11 @@
  * Displays a title with a bunch of extras, like: description, image, versioncheck
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -63,6 +63,18 @@ class JFormFieldNN_Header extends JFormField
 			}
 		}
 
+		if (!$xml && $this->form->getValue('element'))
+		{
+			if ($this->form->getValue('folder'))
+			{
+				$xml = 'plugins/' . $this->form->getValue('folder') . '/' . $this->form->getValue('element') . '/' . $this->form->getValue('element') . '.xml';
+			}
+			else
+			{
+				$xml = 'administrator/modules/' . $this->form->getValue('element') . '/' . $this->form->getValue('element') . '.xml';
+			}
+		}
+
 		if ($xml)
 		{
 			$xml = JApplicationHelper::parseXMLInstallFile(JPATH_SITE . '/' . $xml);
@@ -73,12 +85,12 @@ class JFormFieldNN_Header extends JFormField
 			}
 			if ($version)
 			{
-				if (!(strpos($version, 'PRO') === false))
+				if (strpos($version, 'PRO') !== false)
 				{
 					$version = str_replace('PRO', '', $version);
 					$version .= ' <small style="color:green">[PRO]</small>';
 				}
-				else if (!(strpos($version, 'FREE') === false))
+				else if (strpos($version, 'FREE') !== false)
 				{
 					$version = str_replace('FREE', '', $version);
 					$version .= ' <small style="color:green">[FREE]</small>';

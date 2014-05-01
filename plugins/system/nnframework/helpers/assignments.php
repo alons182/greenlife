@@ -3,11 +3,11 @@
  * NoNumber Framework Helper File: Assignments
  *
  * @package         NoNumber Framework
- * @version         13.12.7
+ * @version         14.4.5
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2013 NoNumber All Rights Reserved
+ * @copyright       Copyright © 2014 NoNumber All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -48,6 +48,7 @@ class NNFrameworkAssignmentsHelper
 		$this->has['mijoshop'] = NNFrameworkFunctions::extensionInstalled('mijoshop');
 		$this->has['redshop'] = NNFrameworkFunctions::extensionInstalled('redshop');
 		$this->has['virtuemart'] = NNFrameworkFunctions::extensionInstalled('virtuemart');
+		$this->has['cookieconfirm'] = NNFrameworkFunctions::extensionInstalled('cookieconfirm');
 
 		$this->types = array(
 			'Menu',
@@ -97,6 +98,7 @@ class NNFrameworkAssignmentsHelper
 			'VirtueMart_PageTypes',
 			'VirtueMart_Categories',
 			'VirtueMart_Products',
+			'CookieConfirm',
 			'PHP'
 		);
 		$this->nonarray = array(
@@ -136,7 +138,7 @@ class NNFrameworkAssignmentsHelper
 		$this->params->option = JFactory::getApplication()->input->get('option');
 		$this->params->view = JFactory::getApplication()->input->get('view');
 		$this->params->task = JFactory::getApplication()->input->get('task');
-		$this->params->layout = JFactory::getApplication()->input->get('layout');
+		$this->params->layout = JFactory::getApplication()->input->get('layout', '', 'string');
 		$this->params->id = JFactory::getApplication()->input->getInt('id', 0);
 		$this->params->Itemid = JFactory::getApplication()->input->getInt('Itemid', 0);
 
@@ -217,7 +219,7 @@ class NNFrameworkAssignmentsHelper
 	{
 		$this->getAssignmentState($params->assignment);
 		$params->id = $type;
-		if (!(strpos($type, '_') === false))
+		if (strpos($type, '_') !== false)
 		{
 			$type = explode('_', $type, 2);
 			$params->maintype = $type['0'];
@@ -448,7 +450,7 @@ class NNFrameworkAssignmentsHelper
 	{
 		if (!is_array($array))
 		{
-			if (!$onlycommas && !(strpos($array, '|') === false))
+			if (!$onlycommas && strpos($array, '|') !== false)
 			{
 				$array = explode('|', $array);
 			}
@@ -457,10 +459,13 @@ class NNFrameworkAssignmentsHelper
 				$array = explode(',', $array);
 			}
 		}
-
-		if (isset($array['0']) && is_array($array['0']))
+		else if (isset($array['0']) && is_array($array['0']))
 		{
 			$array = $array['0'];
+		}
+		else if (count($array) === 1 && strpos($array['0'], ',') !== false)
+		{
+			$array = explode(',', $array['0']);
 		}
 
 		if ($trim)
@@ -500,6 +505,7 @@ class NNFrameworkAssignmentsHelper
 		{
 			$assignments[$name]->params->publish_up = $params->{'assignto_' . $id . '_publish_up'};
 			$assignments[$name]->params->publish_down = $params->{'assignto_' . $id . '_publish_down'};
+			$assignments[$name]->params->recurring = isset($params->{'assignto_' . $id . '_recurring'}) ? $params->{'assignto_' . $id . '_recurring'} : 0;
 		}
 		list($id, $name) = $this->setAssignmentParams($assignments, $params, 'datetime', 'seasons');
 		if ($id)
@@ -705,6 +711,11 @@ class NNFrameworkAssignmentsHelper
 			}
 
 			$this->setAssignmentParams($assignments, $params, 'virtuemart', 'products', 1);
+		}
+
+		if ($this->has['cookieconfirm'])
+		{
+			$this->setAssignmentParams($assignments, $params, 'cookieconfirm');
 		}
 
 		$this->setAssignmentParams($assignments, $params, 'php');
