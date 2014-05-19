@@ -49,7 +49,9 @@ body
 /*.bgid-153, .bgid-152
 	#main-footer
 		margin-top 50px*/
-
+.bgid-104
+	#main 
+		height auto !important
 .btn
 	background $amarillo
 	padding .5em
@@ -393,7 +395,7 @@ p
 			&:hover
 				background $verde
 
-	.item-page, .blog, .category-list, .text404
+	.item-page, .blog, .category-list, .text404, .blog-blog, .item-page-blog
 		margin 20px auto
 		width 1280px
 		background rgba(255,255,255,.9) //url('../img/bg.jpg') repeat
@@ -623,6 +625,7 @@ p
 		.btn 
 			background $naranja
 	.blog
+	.blog-blog
 		.span4
 			width 410px
 			display inline-block
@@ -713,14 +716,34 @@ p
 	display none
 
 
-.blog
+#main 
+	.item-page-blog
+		width 900px
+	
+.blog-blog
+.item-page-blog
 	
 	img 
 		width 100%
 		height auto
+	
 	.item 
 		line-height 24px
-		background green
+		
+	h2 
+		margin .3em 0
+		a 
+			color $naranja
+			&:hover
+				text-decoration underline
+	
+.article-info-term
+	display none
+dd
+dl 
+	margin 0
+.published
+	margin-bottom 1em
 			
 
 
