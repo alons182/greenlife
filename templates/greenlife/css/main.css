@@ -234,7 +234,7 @@ p{margin:0 0 20px}
 .ui-state-default{color:#86b340 !important}
 #btn-rates{display:none}
 .blog img{width:100%;height:auto}
-.blog .item{line-height:24px;background:#f00}
+.blog .item{line-height:24px;background:#008000}
 @media only screen and (max-width:  1280px){.inner{width:auto}
 #main .item-page,#main .blog,#main .text404{width:auto;}
 #main .item-page .info-right .botones,#main .blog .info-right .botones,#main .text404 .info-right .botones{right:0}
